@@ -5,22 +5,24 @@ import{
   Route,
   Link
 } from "react-router-dom"
+import { Incio } from './components/body/Incio';
+import { Nav } from './components/nav/Nav';
 
 function App() {
   return (
     <Router>
-      <div className="container">
+     
       <div className="Navbar">
-      <h1>NAVBAR...</h1>
+        <Nav />
       </div>
+      <div className="container">
       <Switch>
         
         <Router path="/Jonathan">
-          <h2>jonathan
-          </h2>
+         
         </Router>
         <Router path="/">
-          <h2>Inici</h2>
+          <Incio />
         </Router>
       </Switch>
 

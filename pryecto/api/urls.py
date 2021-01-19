@@ -1,9 +1,9 @@
 
 from django.urls import path
 from .views import UserView
+from rest_framework import routers
 
-urlpatterns = [
-    
-    path('home',UserView.as_view()),
-  
-]
+
+urls = routers.DefaultRouter()
+urls.register('user',UserView,basename='languages')
+

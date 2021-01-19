@@ -12,6 +12,12 @@ class UserView(generics.ListAPIView):
     queryset= User.objects.all()
     serializer_class = UserSeralizer
 
+    def newest(self,request):
+        
+        newest = self.getQuerySet().order_by("create_at").last()
+        serializer = self.get_serializer_class()(newest)
+        return Response(serializer.data)
+        
 # class CreateRoomView(APIView):
 #     serializer_class=CreateRoomSerializer
 #     def post(self,request,format=None):

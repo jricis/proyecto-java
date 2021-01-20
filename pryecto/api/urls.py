@@ -7,8 +7,3 @@ from rest_framework import routers
 urls = routers.DefaultRouter()
 urls.register('user',UserView,basename='languages')
 
-urlpatterns = [
-    
-    path('home',UserView.as_view()),
-    path('new',UserView.newest)
-]

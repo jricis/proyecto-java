@@ -33,12 +33,6 @@ class UserView(viewsets.ModelViewSet):
             return queryset
         return queryset
 
-    def newest(self,request):
-        
-        newest = self.getQuerySet().order_by("create_at").last()
-        serializer = self.get_serializer_class()(newest)
-        return Response(serializer.data)
-        
 # class CreateRoomView(APIView):
 #     serializer_class=CreateRoomSerializer
 #     def post(self,request,format=None):

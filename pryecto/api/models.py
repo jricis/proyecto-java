@@ -21,7 +21,7 @@ class Restaurant(models.Model):
     phone = models.IntegerField
     description = models.TextField
     preparado  = models.BooleanField(default=False)
-    riders = models.ManyToManyField(Rider, through='Restaurant_has_Rider')
+    riders = models.ManyToManyField(Rider)
     image_idImage = models.ForeignKey(Image, on_delete=models.CASCADE)
 
 class User(models.Model):
@@ -45,7 +45,7 @@ class Pedido(models.Model):
     price = models.DecimalField(max_digits=5, decimal_places=2)
     description = models.TextField
     image_idImage = models.ForeignKey(Image, on_delete=models.CASCADE)
-    restaurants = models.ManyToManyField(Restaurant, through="Restaurant_has_Pedido")
+    restaurants = models.ManyToManyField(Restaurant)
 
 class Order(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4,editable=False)

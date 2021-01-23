@@ -5,15 +5,26 @@ import random
 
 # Create your models here.
 
-
+#crea la tabla rider
 class Rider(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     type_vehicle = models.CharField(max_length = 45,default="")
+    libre = models.BooleanField(default=False)
 
+#crea la tabla image
 class Image(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     url = models.URLField(max_length = 200)
 
+#crea la tabla product
+class Product(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4,editable=False)
+    name = models.CharField(max_length=45,default="")
+    price = models.DecimalField(max_digits=5, decimal_places=2)
+    description = models.TextField()
+    image_idImage = models.ForeignKey(Image, on_delete=models.CASCADE, blank=True, null=True)
+
+#crea la tabla restaurant
 class Restaurant(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     name = models.CharField(max_length=30)
@@ -22,8 +33,10 @@ class Restaurant(models.Model):
     description = models.TextField(blank=True)
     preparado  = models.BooleanField(default=False)
     riders = models.ManyToManyField(Rider)
-    image_idImage = models.ForeignKey(Image, on_delete=models.CASCADE)
-
+    image = models.ForeignKey(Image, on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, blank=True, null=True)
+    
+#crea la tabla user
 class User(models.Model):
     objects = None
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
@@ -37,20 +50,12 @@ class User(models.Model):
     birthday = models.DateField(null=True)
     password = models.CharField(max_length=45)
     created_at = models.DateTimeField(auto_now_add=True)
-    Rider = models.ForeignKey(Rider, on_delete=models.CASCADE, blank=True, null=True)
     restaurant = models.ForeignKey(Restaurant, on_delete=models.CASCADE, blank=True, null=True)
-
-
-
+    image = models.OneToOneField(Image, on_delete=models.CASCADE, blank=True, null=True)
+    rider = models.OneToOneField(Rider, on_delete=models.CASCADE, blank=True, null=True)
+    
+# crea la tabla pedido
 class Pedido(models.Model):
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4,editable=False)
-    name = models.CharField(max_length=45,default="")
-    price = models.DecimalField(max_digits=5, decimal_places=2)
-    description = models.TextField()
-    image_idImage = models.ForeignKey(Image, on_delete=models.CASCADE, blank=True, null=True)
-    restaurants = models.ManyToManyField(Restaurant)
-
-class Order(models.Model):
     class EligeEstado(models.TextChoices):
         PREPARADO = 'preparado'
         ENTREGADO = 'entregado'
@@ -58,12 +63,13 @@ class Order(models.Model):
         RECIBIDO = 'recibida la solicitud de pedido'
 
     id = models.UUIDField(primary_key=True, default=uuid.uuid4,editable=False)
-    num_order = models.PositiveIntegerField()
+    num_pedido = models.PositiveBigIntegerField(default=0)
     total_price = models.DecimalField(max_digits=5, decimal_places=2)
     entregado = models.BooleanField(default=False)
     estado = models.CharField(max_length=45, choices= EligeEstado.choices, default=EligeEstado.RECIBIDO)
     pagado = models.BooleanField(default=False)
-
-    
+    restaurants = models.ManyToManyField(Restaurant)
+    user = models.ManyToManyField(User)
+    rider = models.OneToOneField(Rider, on_delete=models.CASCADE, blank=True, null=True)
 
 

@@ -22,7 +22,7 @@ class Product(models.Model):
     name = models.CharField(max_length=45,default="")
     price = models.DecimalField(max_digits=5, decimal_places=2)
     description = models.TextField()
-    image_idImage = models.ForeignKey(Image, on_delete=models.CASCADE, blank=True, null=True)
+    image = models.ForeignKey(Image, on_delete=models.CASCADE, blank=True, null=True)
 
 #crea la tabla restaurant
 class Restaurant(models.Model):

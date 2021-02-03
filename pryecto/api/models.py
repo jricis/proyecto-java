@@ -3,6 +3,7 @@ import uuid
 import string
 import random
 
+
 # Create your models here.
 
 #crea la tabla rider
@@ -15,6 +16,7 @@ class Rider(models.Model):
 class Image(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     url = models.URLField(max_length = 200)
+    imagen = models.ImageField( upload_to='imagenes/',null=True,blank=True)
 
 #crea la tabla product
 class Product(models.Model):

@@ -3,6 +3,7 @@ from .models import User
 from .models import Restaurant
 from .models import Product
 from .models import Image
+from .models import Pedido
 
 class UserSeralizer(serializers.HyperlinkedModelSerializer):
     class Meta:
@@ -22,7 +23,7 @@ class ProductSerialize(serializers.HyperlinkedModelSerializer):
 class ImageSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Image
-        fields = ('id','url')
+        fields = ('id','url','imagen')
     
 class PedidoSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:

@@ -10,24 +10,21 @@ from django_filters.rest_framework import DjangoFilterBackend
 
 # Create your views here.
 
-class UserView(viewsets.ModelViewSet):
-    
+class UserView(viewsets.ModelViewSet):    
     queryset=User.objects.all()
     serializer_class = UserSeralizer
     filter_backends=[DjangoFilterBackend]
     filterset_fields = ['postalcode','email']
     
  
-class RestaurantView(viewsets.ModelViewSet):
-    
+class RestaurantView(viewsets.ModelViewSet):   
     queryset=Restaurant.objects.all()
     serializer_class= RestaurantSeralizer
     filter_backends=[DjangoFilterBackend]
     filterset_fields = ['name','adress']
-class ProductView(viewsets.ModelViewSet):
-    
+class ProductView(viewsets.ModelViewSet):   
     queryset=Product.objects.all()
     serializer_class= ProductSerializer
     filter_backends=[DjangoFilterBackend]
-    # filterset_fields = ['name','adress']       
+    #filterset_fields = ['name','adress']       
     

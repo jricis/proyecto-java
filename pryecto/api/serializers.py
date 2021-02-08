@@ -3,18 +3,19 @@ from .models import User
 from .models import Restaurant
 from .models import Product
 from .models import Image
+from .models import Pedido
 
 class UserSeralizer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = User
-        fields = ('id','name','surname','email','postalCode','city','phone','birthday','password','created_at','restaurant','image','rider')
+        fields = ('id','name','surname','email','postalcode','city','phone','birthday','password','created_at','image','rider')
 
 class RestaurantSeralizer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Restaurant
-        fields = ('id','name','adress','phone','description','preparado','riders','image','product')
+        fields = ('id','name','adress','phone','description','image','id_product')
 
-class ProductSerialize(serializers.HyperlinkedModelSerializer):    
+class ProductSerializer(serializers.HyperlinkedModelSerializer):    
     class Meta:
         model = Product
         fields = ('id','name','price','description','image')

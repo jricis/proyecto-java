@@ -15,6 +15,7 @@ class Rider(models.Model):
 class Image(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     url = models.URLField(max_length = 200)
+    
 
 #crea la tabla product
 class Product(models.Model):
@@ -26,15 +27,14 @@ class Product(models.Model):
 
 #crea la tabla restaurant
 class Restaurant(models.Model):
+    objects = None
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     name = models.CharField(max_length=30)
     adress = models.CharField(max_length=50, unique=True)
     phone = models.IntegerField(null=False,default=0)
     description = models.TextField(blank=True)
-    preparado  = models.BooleanField(default=False)
-    riders = models.ManyToManyField(Rider)
-    image = models.ForeignKey(Image, on_delete=models.CASCADE)
-    product = models.ForeignKey(Product, on_delete=models.CASCADE, blank=True, null=True)
+    image = models.ForeignKey(Image, on_delete=models.CASCADE, blank=True, null=True)
+    id_product = models.ForeignKey(Product, on_delete=models.CASCADE, blank=True, null=True)
     
 #crea la tabla user
 class User(models.Model):
@@ -44,13 +44,13 @@ class User(models.Model):
     name = models.CharField(max_length=20,default="")
     surname = models.CharField(max_length=50, null=True)
     email = models.EmailField(max_length=45,unique=True)
-    postalCode = models.PositiveIntegerField(default=00000)
+    postalcode = models.PositiveIntegerField(default=00000)
     city = models.CharField(max_length=50, default="")
     phone = models.IntegerField(null=False,default=0)
     birthday = models.DateField(null=True)
     password = models.CharField(max_length=45)
     created_at = models.DateTimeField(auto_now_add=True)
-    restaurant = models.ForeignKey(Restaurant, on_delete=models.CASCADE, blank=True, null=True)
+    id_restaurant = models.ForeignKey(Restaurant, on_delete=models.CASCADE, blank=True, null=True)
     image = models.OneToOneField(Image, on_delete=models.CASCADE, blank=True, null=True)
     rider = models.OneToOneField(Rider, on_delete=models.CASCADE, blank=True, null=True)
     

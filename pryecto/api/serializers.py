@@ -6,23 +6,29 @@ from .models import Product
 from .models import Pedido
 
 
-class UserSeralizer(serializers.HyperlinkedModelSerializer):
-    class Meta:
-        model = User
-        fields = ('id','name','surname','email','postalcode','city','phone','birthday','password','created_at','rider')
+# class UserSeralizer(serializers.HyperlinkedModelSerializer):
+#     class Meta:
+#         model = User
+#         fields = ('id','name','surname','email','postalcode','city','phone','birthday','password','created_at','rider')
 
-class RestaurantSeralizer(serializers.HyperlinkedModelSerializer):
+class ProductSerializer(serializers.ModelSerializer):
+    
+    class Meta:
+         model = Product
+         fields = ('id','name','price','description','imagen','id_restaurant')
+   
+
+class RestaurantSerializer(serializers.ModelSerializer):
+    products =serializers.PrimaryKeyRelatedField(many=True,read_only=True,)
     class Meta:
         model = Restaurant
-        fields = ('id','name','adress','phone','description','imagen')
+        fields = ('id','name','adress','phone','description','imagen','products')
 
-class ProductSerializer(serializers.HyperlinkedModelSerializer):    
-    class Meta:
-        model = Product
-        fields = ('id','name','price','description','imagen','id_restaurant')
-        
-class PedidoSerializer(serializers.HyperlinkedModelSerializer):
-    class Meta:
-        model = Pedido
-        fields = ('id','num_pedido','total_price','entregado','estado','pagado','restaurants','user','rider')
+
+
+    
+# class PedidoSerializer(serializers.HyperlinkedModelSerializer):
+#     class Meta:
+#         model = Pedido
+#         fields = ('id','num_pedido','total_price','entregado','estado','pagado','restaurants','user','rider')
 

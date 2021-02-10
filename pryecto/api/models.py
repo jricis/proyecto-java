@@ -32,7 +32,7 @@ class Product(models.Model):
     price = models.DecimalField(max_digits=5, decimal_places=2)
     description = models.TextField()
     imagen = models.ImageField( upload_to='imagenes/',null=True,blank=True)
-    id_restaurant = models.ForeignKey(Restaurant, on_delete=models.CASCADE, blank=True, null=True)
+    id_restaurant = models.ForeignKey(Restaurant,related_name="products", on_delete=models.CASCADE, blank=True, null=True)
 
     
     

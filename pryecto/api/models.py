@@ -18,11 +18,14 @@ class Restaurant(models.Model):
     objects = None
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     name = models.CharField(max_length=30)
-    adress = models.CharField(max_length=50, unique=True)
+    email = models.EmailField(max_length=45,unique=True)
+    city = models.CharField(max_length=50, default="",null=False)
+    postalcode = models.CharField(max_length=5, default="")
+    adress = models.CharField(max_length=50, unique=True,)
     phone = models.IntegerField(null=False,default=0)
     description = models.TextField(blank=True)
     imagen = models.ImageField( upload_to='imagenes/',null=True,blank=True)
-   
+    
 
 #crea la tabla product
 class Product(models.Model):
@@ -32,7 +35,7 @@ class Product(models.Model):
     price = models.DecimalField(max_digits=5, decimal_places=2)
     description = models.TextField()
     imagen = models.ImageField( upload_to='imagenes/',null=True,blank=True)
-    id_restaurant = models.ForeignKey(Restaurant,related_name="products", on_delete=models.CASCADE, blank=True, null=True)
+    id_restaurant = models.ForeignKey(Restaurant,related_name="products", on_delete=models.CASCADE, blank=True, null=False)
 
     
     
@@ -40,7 +43,6 @@ class Product(models.Model):
 class User(models.Model):
     objects = None
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    user = models.CharField(max_length=20)
     name = models.CharField(max_length=20,default="")
     surname = models.CharField(max_length=50, null=True)
     email = models.EmailField(max_length=45,unique=True)
@@ -50,9 +52,9 @@ class User(models.Model):
     birthday = models.DateField(null=True)
     password = models.CharField(max_length=45)
     created_at = models.DateTimeField(auto_now_add=True)
-    id_restaurant = models.ForeignKey(Restaurant, on_delete=models.CASCADE, blank=True, null=True)
+   
+
     #image = models.OneToOneField(Image, on_delete=models.CASCADE, blank=True, null=True)
-    rider = models.OneToOneField(Rider, on_delete=models.CASCADE, blank=True, null=True)
     
 # crea la tabla pedido
 class Pedido(models.Model):
@@ -68,8 +70,8 @@ class Pedido(models.Model):
     entregado = models.BooleanField(default=False)
     estado = models.CharField(max_length=45, choices= EligeEstado.choices, default=EligeEstado.RECIBIDO)
     pagado = models.BooleanField(default=False)
-    restaurants = models.ManyToManyField(Restaurant)
-    user = models.ManyToManyField(User)
-    rider = models.OneToOneField(Rider, on_delete=models.CASCADE, blank=True, null=True)
+    restaurants = models.ManyToManyField(Restaurant,related_name="pedidorestaurant")
+    user = models.ManyToManyField(User,related_name="pedidouser")
+    rider = models.OneToOneField(Rider, on_delete=models.CASCADE,related_name="pedidorider", blank=True, null=True)
 
 

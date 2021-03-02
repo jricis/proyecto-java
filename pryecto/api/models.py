@@ -11,7 +11,7 @@ class Rider(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     type_vehicle = models.CharField(max_length = 45,default="")
     libre = models.BooleanField(default=False)
-
+    
 
 #crea la tabla restaurant
 class Restaurant(models.Model):
@@ -34,7 +34,7 @@ class Product(models.Model):
     name = models.CharField(max_length=45,default="")
     price = models.DecimalField(max_digits=5, decimal_places=2)
     description = models.TextField()
-    imagen = models.ImageField( upload_to='imagenes/',null=True,blank=True)
+    imagen = models.ImageField( upload_to='imagenes/product',null=True,blank=True)
     id_restaurant = models.ForeignKey(Restaurant,related_name="products", on_delete=models.CASCADE, blank=True, null=False)
 
     
@@ -52,12 +52,12 @@ class User(models.Model):
     birthday = models.DateField(null=True)
     password = models.CharField(max_length=45)
     created_at = models.DateTimeField(auto_now_add=True)
-   
-
-    #image = models.OneToOneField(Image, on_delete=models.CASCADE, blank=True, null=True)
+    rider= models.OneToOneField(Rider, on_delete=models.CASCADE,blank=True,null=True)
+    image = models.ImageField(upload_to="imagenes",null=True,blank=True)
     
 # crea la tabla pedido
 class Pedido(models.Model):
+    objects= None;
     class EligeEstado(models.TextChoices):
         PREPARADO = 'preparado'
         ENTREGADO = 'entregado'
@@ -65,7 +65,7 @@ class Pedido(models.Model):
         RECIBIDO = 'recibida la solicitud de pedido'
 
     id = models.UUIDField(primary_key=True, default=uuid.uuid4,editable=False)
-    num_pedido = models.PositiveBigIntegerField(default=0)
+    num_pedido = models.PositiveBigIntegerField(default=0,unique=True)
     total_price = models.DecimalField(max_digits=5, decimal_places=2)
     entregado = models.BooleanField(default=False)
     estado = models.CharField(max_length=45, choices= EligeEstado.choices, default=EligeEstado.RECIBIDO)

@@ -1,13 +1,16 @@
+
 import React from 'react';
-import Contador from './Contador'
-import Home from './home'
+import Restaurantes from './restaurante';
+
+
 
 function App() {
   return (
-    <div>
-      <Contador></Contador>
-      <Home></Home>
+    <div className="container mt-2">
+    
+    <Restaurantes></Restaurantes>
+
     </div>
   );
 }
-export default App
+export default App; 

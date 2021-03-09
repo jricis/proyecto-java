@@ -26,10 +26,10 @@ class RestaurantView(viewsets.ModelViewSet):
         try:
             restaurant=Restaurant.objects.get(pk=pk)
         except Restaurant.DoesNotExist:
-            return Response(status=status.HTTP_404_NOT_FOUND)
-
+            return Response(status=status.HTTP_400_NOT_FOUND)
+        
         if request.method=='PUT':
-            serializer=RestaurantSerializer(restaurant,data=request.DATA)
+            serializer=RestaurantSerializer(restaurant,data=request.data)
             if serializer.is_valid():
                 serializer.save()
                 return Response(serializer.data)

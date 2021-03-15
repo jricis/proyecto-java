@@ -73,5 +73,6 @@ class Pedido(models.Model):
     restaurants = models.ManyToManyField(Restaurant,related_name="pedidorestaurant")
     user = models.ManyToManyField(User,related_name="pedidouser")
     rider = models.OneToOneField(Rider, on_delete=models.CASCADE,related_name="pedidorider", blank=True, null=True)
-
-
+# class Pedido(models.Model):
+#     id = models.UUIDField(primary_key=True, default=uuid.uuid4,editable=False)
+#     pedidos = models.ForeignKey(Pedidos, related_name="pedidos", on_delete=models.CASCADE)  

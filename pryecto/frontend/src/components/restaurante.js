@@ -59,7 +59,11 @@ const {register, errors, handleSubmit} = useForm();
         })
         try{
             const{data}= axios.put(
+<<<<<<< HEAD
                 "http://127.0.0.1:8000/api/restaurant/dcbb9c7f-a8c9-454f-9cc5-54e11b5adf89/",
+=======
+                "http://127.0.0.1:8000/api/restaurant/ca806649-673e-4251-987a-4eaddfb4b73c/",
+>>>>>>> 71bdbceeae1b5984694e7f0e40c20578b2da0dec
                 {
                     name : restaurante.nombre,
                     email : restaurante.email,

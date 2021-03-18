@@ -26,6 +26,27 @@ class Restaurant(models.Model):
     description = models.TextField(blank=True)
     imagen = models.ImageField( upload_to='imagenes/',null=True,blank=True)
     
+# crea la tabla pedido
+class Pedidos(models.Model):
+    objects= None;
+    class EligeEstado(models.TextChoices):
+        PREPARADO = 'preparado'
+        ENTREGADO = 'entregado'
+        COCINANDO = 'en concina'
+        RECIBIDO = 'recibida la solicitud de pedido'
+
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4,editable=False)
+    num_pedidos = models.PositiveBigIntegerField(default=0,unique=True)
+    total_price = models.DecimalField(max_digits=5, decimal_places=2)
+    entregado = models.BooleanField(default=False)
+    estado = models.CharField(max_length=45, choices= EligeEstado.choices, default=EligeEstado.RECIBIDO)
+    pagado = models.BooleanField(default=False)
+    restaurants = models.ManyToManyField(Restaurant,related_name="pedidosrestaurant")
+    rider = models.OneToOneField(Rider, on_delete=models.CASCADE,related_name="pedidosrider", blank=True, null=True)
+class Pedido(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4,editable=False)
+    pedidos = models.ForeignKey(Pedidos, related_name="pedidos", on_delete=models.CASCADE,blank=True,null=True) 
+     
 
 #crea la tabla product
 class Product(models.Model):
@@ -54,25 +75,5 @@ class User(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     rider= models.OneToOneField(Rider, on_delete=models.CASCADE,blank=True,null=True)
     image = models.ImageField(upload_to="imagenes",null=True,blank=True)
+    pedido = models.ForeignKey(Pedido, related_name="pedidouser", on_delete=models.CASCADE,blank=True,null=True)
     
-# crea la tabla pedido
-class Pedido(models.Model):
-    objects= None;
-    class EligeEstado(models.TextChoices):
-        PREPARADO = 'preparado'
-        ENTREGADO = 'entregado'
-        COCINANDO = 'en concina'
-        RECIBIDO = 'recibida la solicitud de pedido'
-
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4,editable=False)
-    num_pedido = models.PositiveBigIntegerField(default=0,unique=True)
-    total_price = models.DecimalField(max_digits=5, decimal_places=2)
-    entregado = models.BooleanField(default=False)
-    estado = models.CharField(max_length=45, choices= EligeEstado.choices, default=EligeEstado.RECIBIDO)
-    pagado = models.BooleanField(default=False)
-    restaurants = models.ManyToManyField(Restaurant,related_name="pedidorestaurant")
-    user = models.ManyToManyField(User,related_name="pedidouser")
-    rider = models.OneToOneField(Rider, on_delete=models.CASCADE,related_name="pedidorider", blank=True, null=True)
-# class Pedido(models.Model):
-#     id = models.UUIDField(primary_key=True, default=uuid.uuid4,editable=False)
-#     pedidos = models.ForeignKey(Pedidos, related_name="pedidos", on_delete=models.CASCADE)  

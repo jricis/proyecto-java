@@ -41,7 +41,19 @@ class Rider(models.Model):
     userrider= models.OneToOneField(User, on_delete=models.CASCADE,blank=True,null=True)
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     type_vehicle = models.CharField(max_length = 45,default="")
-    libre = models.BooleanField(default=False)    
+    libre = models.BooleanField(default=False)  
+
+#crea la tabla product
+class Product(models.Model):
+    objects=None
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4,editable=False)
+    name = models.CharField(max_length=45,default="")
+    price = models.DecimalField(max_digits=5, decimal_places=2)
+    description = models.TextField()
+    imagen = models.ImageField( upload_to='imagenes/product',null=True,blank=True)
+    id_restaurant = models.ForeignKey(Restaurant,related_name="products", on_delete=models.CASCADE, blank=True, null=False)
+
+        
 # crea la tabla pedido
 class Pedido(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4,editable=False)
@@ -64,18 +76,9 @@ class Pedidos(models.Model):
     restaurants = models.ForeignKey(Restaurant,related_name="pedidosrestaurant", on_delete=models.CASCADE,blank=True,null=True)
     rider = models.OneToOneField(Rider, on_delete=models.CASCADE,related_name="pedidosrider", blank=True, null=True)
     id_pedido = models.ForeignKey(Pedido, related_name="pedidos", on_delete=models.CASCADE,blank=True,null=True)
+    products = models.ManyToManyField(Product,related_name="products",blank=True,null=True)
     
 
 
-#crea la tabla product
-class Product(models.Model):
-    objects=None
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4,editable=False)
-    name = models.CharField(max_length=45,default="")
-    price = models.DecimalField(max_digits=5, decimal_places=2)
-    description = models.TextField()
-    imagen = models.ImageField( upload_to='imagenes/product',null=True,blank=True)
-    id_restaurant = models.ForeignKey(Restaurant,related_name="products", on_delete=models.CASCADE, blank=True, null=False)
 
-    
     

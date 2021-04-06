@@ -1,24 +1,15 @@
-<<<<<<< HEAD
 import React, { Fragment, useState, useEffect } from 'react';
-=======
-import React, { Component, Fragment, useState, useEffect } from 'react';
->>>>>>> 139046cbc3c78e4df2d6a69948f0a4981a1e95f8
 import { useForm } from 'react-hook-form';
 import axios from 'axios'
 
 const Restaurantes =()=>{
-<<<<<<< HEAD
 const [restaurante,useRestaurante]= useState({
-=======
-const [restaurante,useRestaurente]= useState({
->>>>>>> 139046cbc3c78e4df2d6a69948f0a4981a1e95f8
     nombre:"",
     email:"",
     phone:"",
     adress:"",
     city:"",
     postalcode:"",
-<<<<<<< HEAD
     description:"",
     imagen: null
 })
@@ -45,54 +36,21 @@ const [restaurante,useRestaurente]= useState({
 
      const    handleChangePostalCode=(e)=>{
         useRestaurante({...restaurante,postalcode:e.target.value})
-=======
-    description:""
-})
-
-    const handleChangeNombre=(e)=>{
-            useRestaurente({...restaurante,nombre:e.target.value})
-        }
-
-    const     handleChangeEmail=(e)=>{
-        useRestaurente({...restaurante,email:e.target.value})
-        }
-
-    const     handleChangePhone=(e)=>{
-        useRestaurente({...restaurante,phone:e.target.value})
-        }
-
-    const     handleChangeadress=(e)=>{
-        useRestaurente({...restaurante,adress:e.target.value})
-        }
-
-    const     handleChangeCity=(e)=>{
-        useRestaurente({...restaurante,city:e.target.value})
-        }
-
-     const    handleChangePostalCode=(e)=>{
-        useRestaurente({...restaurante,postalcode:e.target.value})
->>>>>>> 139046cbc3c78e4df2d6a69948f0a4981a1e95f8
         console.log(restaurante.postalcode)
         }
 
     const     handleChangeDescription=(e)=>{
-<<<<<<< HEAD
         useRestaurante({...restaurante,description:e.target.value})
         }
     
     const     handleChangeFile=(e)=>{
         useRestaurante({...restaurante,imagen:e.target.files[0]})
         }    
-=======
-        useRestaurente({...restaurante,description:e.target.value})
-        }
-
->>>>>>> 139046cbc3c78e4df2d6a69948f0a4981a1e95f8
     
 const {register, errors, handleSubmit} = useForm();
 
 
-<<<<<<< HEAD
+
     const onSubmit = (data, e) =>{
         console.log(data);
         e.preventDefault();
@@ -127,7 +85,10 @@ const {register, errors, handleSubmit} = useForm();
                     // imagen:formData,
                 
            console.log(data)
-=======
+        
+        }catch (error){
+            console.log(error)
+        }
      
 
 
@@ -141,11 +102,7 @@ const {register, errors, handleSubmit} = useForm();
         })
         try{
             const{data}= axios.put(
-<<<<<<< HEAD
                 "http://127.0.0.1:8000/api/restaurant/dcbb9c7f-a8c9-454f-9cc5-54e11b5adf89/",
-=======
-                "http://127.0.0.1:8000/api/restaurant/ca806649-673e-4251-987a-4eaddfb4b73c/",
->>>>>>> 71bdbceeae1b5984694e7f0e40c20578b2da0dec
                 {
                     name : restaurante.nombre,
                     email : restaurante.email,
@@ -156,32 +113,21 @@ const {register, errors, handleSubmit} = useForm();
                     description:restaurante.description
                 }
             )
->>>>>>> 139046cbc3c78e4df2d6a69948f0a4981a1e95f8
+
         }catch (error){
             console.log(error)
         }
     
         
     }
-<<<<<<< HEAD
-
+}
   
    
-=======
-   
-   
-
-
->>>>>>> 139046cbc3c78e4df2d6a69948f0a4981a1e95f8
     return(
 
         <Fragment>
 
-<<<<<<< HEAD
             <h1>Restaurantes</h1>
-=======
-            <h1>Restaurante</h1>
->>>>>>> 139046cbc3c78e4df2d6a69948f0a4981a1e95f8
 
             <form onSubmit={handleSubmit(onSubmit)}>
 
@@ -281,7 +227,6 @@ const {register, errors, handleSubmit} = useForm();
                     {errors.description.message}
                     </span>
                     }
-<<<<<<< HEAD
                 
                 <input type="file" 
                        name="imagen"
@@ -296,8 +241,6 @@ const {register, errors, handleSubmit} = useForm();
                        {errors.imagen.message}
                        </span>
                        }
-=======
->>>>>>> 139046cbc3c78e4df2d6a69948f0a4981a1e95f8
 
             <button onClick={handleSubmit} className="btn btn-primary"> Agregar </button>
 
@@ -306,11 +249,8 @@ const {register, errors, handleSubmit} = useForm();
         </Fragment>
 
        );
-
-<<<<<<< HEAD
+                    
 }
-=======
-                }
->>>>>>> 139046cbc3c78e4df2d6a69948f0a4981a1e95f8
+
 
 export default Restaurantes;

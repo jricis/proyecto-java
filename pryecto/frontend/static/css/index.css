@@ -1,0 +1,179 @@
+.home{
+    background-color: #FFBE35;
+}
+
+.bloque1{
+
+    height: 300px;
+    width: 100%;
+    background-color: #FFBE35;
+
+}
+
+.bloque2{
+
+    height: 800px;
+    width: 100%;
+    background-color: white;
+
+}
+
+/* Estilos del Registro */
+
+.body-form{
+
+    background-color: #FFBE35;
+}
+
+.register-title{
+
+    margin-top: -280px;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.register-user{
+
+    height: 400px;
+    width: 350px;
+    margin-top: auto;
+    margin-bottom: auto;
+    background: #fafafa;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5px;
+
+    
+}
+
+
+
+
+/* Fin de estilos del Registro */
+
+
+/* Estilos del Login */
+
+.formulario{
+
+    margin-top: 620px;
+    margin-left: 20px;
+}
+
+.login-title{
+
+    margin-top: -280px;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.login-user{
+
+    height: 400px;
+    width: 350px;
+    margin-top: auto;
+    margin-bottom: auto;
+    background: #fafafa;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5px;
+
+    
+}
+
+.remember-me{
+    margin-top: 20px;
+    margin-left: 70px;
+}
+
+.no-account{
+
+    margin-top: 45px;
+    margin-left: 0px;
+}
+
+.btn-primary{
+
+    background-color: #cd70ff;
+    border-color: #cd70ff;
+    margin-top: 60px;
+    
+    
+}
+
+/* Fin de estilos de Login */
+
+/* Inicio de estilos de Home */
+
+/* .img-prueba{
+    height: 28px;
+    width: 100%;
+} */
+
+/* .tarjeta{
+
+    height: 128px;
+    width: 100%;
+
+} */
+
+
+
+.cerca{
+   
+    font-size: 32px;
+    font-family: sans-serif;
+
+}
+
+.card-title{
+
+    font-family: sans-serif;
+    font-size: 18px;
+    display: flex;
+    text-decoration: none;
+    color: black;
+}
+
+a:link, a:visited, a:active {
+    text-decoration:none;
+}
+
+
+.card-img-top{
+
+    width: 100px;
+    height: 30px;
+}
+
+/* Fin de estilos de Home */
+
+/* Inicio estilos de Footer */
+
+.footer{
+    
+    height: 300px;
+    width: 100%;
+    background-color: rgb(36, 36, 36);
+    
+    color: white;
+    font-family: sans-serif;
+    font-size: 15px;
+}
+
+a:link, a:visited, a:active {
+    text-decoration:none;
+}
+/* Fin de estilos de Footer */

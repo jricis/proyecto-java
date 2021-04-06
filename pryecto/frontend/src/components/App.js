@@ -1,13 +1,32 @@
 import React from 'react';
-import Contador from './Contador'
-import Home from './home'
+
+import Buscador from './buscador';
+import CardsRestaurantes from './cards_restaurantes';
+import CardsTrabaja from './cards_trabaja_nosotros';
+import Home from './index';
+import LoginUser from './login_user';
+import RegistroUser from './registro_user';
+import Restaurantes from './restaurante';
+import CardsRests from './GetRest';
+import GetRest from './GetRest';
+import Footer from './Footer';
+
 
 function App() {
   return (
-    <div>
-      <Contador></Contador>
-      <Home></Home>
+   <div>
+    {/* <GetRest></GetRest> */}
+     {/* <Home></Home> */}
+     <RegistroUser></RegistroUser>
+    {/* <LoginUser></LoginUser> */}
+    {/* <CardsRestaurantes></CardsRestaurantes>
+      <CardsTrabaja></CardsTrabaja>
+        <Footer></Footer> */}
+
+    
+         
+    
     </div>
   );
 }
-export default App
+export default App;

@@ -1,7 +1,15 @@
 import React from 'react';
 const Home = () =>{
-    return( 
-        <h1>Incio</h1>
-    );    
-}
+
+
+   
+
+        return( 
+            <div>
+            <h1>Multifood</h1>
+                <img src="imagenes/logo.jpg"/>
+            </div>
+        );  
+    }  
+
 export default Home;

@@ -20,11 +20,12 @@ function App() {
     {/* <GetRest></GetRest> */}
     {/* <Home></Home>   */}
     {/* <RegistroUser></RegistroUser> */}
-    {/* <LoginUser></LoginUser> */}
-    {/* <CardsRestaurantes></CardsRestaurantes>
-      <CardsTrabaja></CardsTrabaja>
-        <Footer></Footer> */}
+    {/* <LoginUser></LoginUser> 
+    <CardsRestaurantes></CardsRestaurantes>
+    <CardsTrabaja></CardsTrabaja> */}
     <HomeRider></HomeRider>
+    <Footer></Footer>
+    
 
     
          

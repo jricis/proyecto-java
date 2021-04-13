@@ -8,7 +8,7 @@ const HomeRider = () => {
                <div className="col-4 mt-6 bg-light" style={{height: "200px",marginTop: "15px"}} >
     <p>Nombre:</p><br></br>
     <p>Nombre:</p><br></br>
-    <p>Nombre:</p><br></br>
+    <p>Nombre:</p>
  
 
                </div>

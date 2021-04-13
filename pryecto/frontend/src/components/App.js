@@ -17,8 +17,9 @@ function App() {
   return (
    <div>
     {/* <GetRest></GetRest> */}
-     {/* <Home></Home> */}
-     <RegistroUser></RegistroUser>
+    
+    
+     {/* <RegistroUser></RegistroUser> */}
     {/* <LoginUser></LoginUser> */}
     {/* <CardsRestaurantes></CardsRestaurantes>
       <CardsTrabaja></CardsTrabaja>

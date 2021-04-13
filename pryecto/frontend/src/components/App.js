@@ -11,19 +11,20 @@ import Restaurantes from './restaurante';
 import CardsRests from './GetRest';
 import GetRest from './GetRest';
 import Footer from './Footer';
+import HomeRider from './HomeRider';
 
 
 function App() {
   return (
    <div>
     {/* <GetRest></GetRest> */}
-    
-    
-     {/* <RegistroUser></RegistroUser> */}
+    {/* <Home></Home>   */}
+    {/* <RegistroUser></RegistroUser> */}
     {/* <LoginUser></LoginUser> */}
     {/* <CardsRestaurantes></CardsRestaurantes>
       <CardsTrabaja></CardsTrabaja>
         <Footer></Footer> */}
+    <HomeRider></HomeRider>
 
     
          

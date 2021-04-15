@@ -1,8 +1,8 @@
 import React from 'react';
-import Buscador from './buscador';
-import CardsRestaurantes from './cards_restaurantes';
+import Buscador from './Buscador';
+import CardsRestaurantes from './CardsRestaurantes';
 import Footer from './Footer';
-import LoginUser from './login_user';
+import LoginUser from './LoginUser';
 const Home = () =>{
 
         return( 

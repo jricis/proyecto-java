@@ -1,25 +1,37 @@
 import React, {Fragment, useEffect, useState} from 'react'
-
 import CardRest from './CardRest'
+import {getRest} from './GetRest'
 
-const GetRest= (lista) =>{
-    //GET
-    const [restaurantes, setRestaurantes] = useState([])
-    useEffect(async() =>{
+const CardRests= () =>{
+    const [restaurantes,setRestaurantes]= useState([])
+    
+  useEffect(()=>{
+    let mounted = true;
+    getRest()
+    .then(restaurante=>{
+        if(mounted){
+            setRestaurantes(restaurante)
+          
+        }
         
-       setRestaurantes(lista)
-       console.log(restaurantes)
+    })
+    console.log(restaurantes)
+    return ()=>mounted = false
+    
     },[])
-   
     return (
-        
+       
         <div>
-            <h3>Restaurante</h3>
-              { lista.map(restaurante => ( 
-               <div key = {restaurante.id}>
-                   <CardRest props = {restaurante}></CardRest>
-                   </div>
-           ))}
+              <h1>RESTAURANTES</h1> 
+            
+            
+           <div id="restaurantes">
+              { restaurantes.map(restaurante => ( 
+              <div id={restaurante.id}>
+                  <CardRest props={restaurante}></CardRest>
+              </div>
+           ))} 
+           </div>
       </div>
 
        );
@@ -27,4 +39,4 @@ const GetRest= (lista) =>{
     }
 
 
-export default GetRest;
+export default CardRests;

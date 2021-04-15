@@ -1,13 +1,13 @@
 import React, {Fragment, useEffect, useState} from 'react'
 import CardRest from './CardRest'
-import {getRest} from './GetRest'
+import { getRestRestaurant} from '../FuncionesApi/GetRest'
 
 const CardRests= () =>{
     const [restaurantes,setRestaurantes]= useState([])
     
   useEffect(()=>{
     let mounted = true;
-    getRest()
+    getRestRestaurant()
     .then(restaurante=>{
         if(mounted){
             setRestaurantes(restaurante)

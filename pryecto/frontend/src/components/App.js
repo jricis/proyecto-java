@@ -11,6 +11,7 @@ import Restaurantes from './Restaurante';
 import CardRests from './CardRests';
 import GetRest from './GetRest';
 import Footer from './Footer';
+import HomeRider from './HomeRider';
 
 
 function App() {

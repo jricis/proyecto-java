@@ -25,25 +25,20 @@
     background-color: #FFBE35;
 }
 
-.register-title{
 
-    margin-top: -280px;
-    font-size: 30px;
-    font-weight: 600;
-}
 
 .register-user{
 
-    height: 400px;
-    width: 350px;
-    margin-top: auto;
-    margin-bottom: auto;
+    
+    /* margin-top: auto;
+    margin-bottom: auto; */
     background: #fafafa;
-    position: relative;
+    /* position: relative;
     display: flex;
     justify-content: center;
     flex-direction: column;
-    padding: 10px;
+    padding: 10px; */
+    /* width: 15%; */
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -62,8 +57,9 @@
 
 .formulario{
 
-    margin-top: 620px;
-    margin-left: 20px;
+    height: auto;
+    width: auto;
+    
 }
 
 .login-title{
@@ -98,18 +94,12 @@
     margin-left: 70px;
 }
 
-.no-account{
 
-    margin-top: 45px;
-    margin-left: 0px;
-}
 
 .btn-primary{
 
     background-color: #cd70ff;
     border-color: #cd70ff;
-    margin-top: 60px;
-    
     
 }
 
@@ -162,7 +152,7 @@ a:link, a:visited, a:active {
 
 /* Inicio estilos de Footer */
 
-.footer{
+/* .footer{
     
     height: 300px;
     width: 100%;
@@ -171,9 +161,13 @@ a:link, a:visited, a:active {
     color: white;
     font-family: sans-serif;
     font-size: 15px;
-}
+} */
 
 a:link, a:visited, a:active {
     text-decoration:none;
 }
 /* Fin de estilos de Footer */
+body{
+    background-color: #FFBE35;
+    font-family: Arial, Helvetica, sans-serif;
+}

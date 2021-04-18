@@ -1,6 +1,7 @@
 import React, {Fragment, useEffect, useState} from 'react'
 import CardRest from './CardRest'
 import { getRestRestaurant} from '../FuncionesApi/GetRest'
+import { Link } from 'react-router-dom'
 
 const CardRests= () =>{
     const [restaurantes,setRestaurantes]= useState([])
@@ -32,6 +33,7 @@ const CardRests= () =>{
               </div>
            ))} 
            </div>
+           <Link to="/home/HomeRider">HomeRider</Link>
       </div>
 
        );

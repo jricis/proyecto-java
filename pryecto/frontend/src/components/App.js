@@ -28,7 +28,7 @@ function App() {
           <Route path="/home" exact>
             <CardRests></CardRests>
           </Route>
-          <Route path="/registroUser">
+          <Route path="/home/registroUser">
             <RegistroUser></RegistroUser>
           </Route>
           <Route path="/registroRestaurante">
@@ -37,8 +37,8 @@ function App() {
           <Route path="/registroRider">
             <RegistroRider></RegistroRider>
           </Route>
-          <Route>
-
+          <Route path="/home/HomeRider/">
+            <HomeRider></HomeRider>
           </Route>
         </Switch>
       </div>

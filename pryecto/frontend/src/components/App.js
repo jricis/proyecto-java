@@ -1,17 +1,14 @@
 
 import React from 'react';
-
-import Buscador from './Buscador';
-import CardsRestaurantes from './CardsRestaurantes';
+import Buscador from './User/Buscador';
+import LoginUser from './User/LoginUser';
+import RegistroUser from './User/RegistroUser';
+import CardRests from './Restaurante/CardRests';
 import CardsTrabaja from './StaticComponents/CardsTrabaja';
-import Home from './index';
-import LoginUser from './LoginUser';
-import RegistroUser from './RegistroUser';
-import Restaurantes from './Restaurante';
-import CardRests from './CardRests';
-import GetRest from './FuncionesApi/GetRest';
 import Footer from './StaticComponents/Footer';
-import HomeRider from './HomeRider';
+import HomeRider from './Rider/HomeRider';
+import RegistroRestaurante from './Restaurante/RegistroRestaurant';
+import RegistroRider from './Rider/RegistroRider';
 import {
   BrowserRouter as Router,
   Switch,
@@ -21,31 +18,31 @@ import {
 
 function App() {
   return (
-   <Router>
-     <div>
-       <div>
-        {/*header*/}
-       </div>
-       <br></br>
-       <Switch>
-         <Route path="/" exact>
-           <CardRests></CardRests>
-         </Route>
-         <Route path="/registroUser">
-           {/*RegistroUsuarios*/}
-         </Route>
-         <Route  path="/registroRestaurante">
-           {/*RegistroRestaurante*/}
-         </Route>
-         <Route  path="/registroRider">
-          {/*RegistroRider*/}
-        </Route>
-        <Route>
-          
-        </Route>
-       </Switch>
-     </div>
-   </Router>
+    <Router>
+      <div>
+        <div>
+          {/*header*/}
+        </div>
+        <br></br>
+        <Switch>
+          <Route path="/home" exact>
+            <CardRests></CardRests>
+          </Route>
+          <Route path="/registroUser">
+            <RegistroUser></RegistroUser>
+          </Route>
+          <Route path="/registroRestaurante">
+            <RegistroRestaurante></RegistroRestaurante>
+          </Route>
+          <Route path="/registroRider">
+            <RegistroRider></RegistroRider>
+          </Route>
+          <Route>
+
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   );
 }
 export default App;

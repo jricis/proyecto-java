@@ -1,4 +1,4 @@
-import React, {useEffect, useState, useParams} from 'react'
+// import React, {useEffect, useState, useParams} from 'react'
 import React from 'react';
 
 const HomeRider = () => {

@@ -40,6 +40,9 @@ function App() {
           <Route path="/home/HomeRider/">
             <HomeRider></HomeRider>
           </Route>
+          <Route path="/home/LoginUser/">
+            <LoginUser></LoginUser>
+          </Route>
         </Switch>
       </div>
     </Router>

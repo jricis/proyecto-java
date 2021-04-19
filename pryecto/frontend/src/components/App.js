@@ -31,10 +31,10 @@ function App() {
           <Route path="/home/registroUser">
             <RegistroUser></RegistroUser>
           </Route>
-          <Route path="/registroRestaurante">
+          <Route path="/home/registroRestaurante">
             <RegistroRestaurante></RegistroRestaurante>
           </Route>
-          <Route path="/registroRider">
+          <Route path="/home/registroRider">
             <RegistroRider></RegistroRider>
           </Route>
           <Route path="/home/HomeRider/">
@@ -44,6 +44,7 @@ function App() {
             <LoginUser></LoginUser>
           </Route>
         </Switch>
+        <Footer></Footer>
       </div>
     </Router>
   );

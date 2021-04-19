@@ -167,7 +167,15 @@ a:link, a:visited, a:active {
     text-decoration:none;
 }
 /* Fin de estilos de Footer */
-body{
+/* body{
     background-color: #FFBE35;
     font-family: Arial, Helvetica, sans-serif;
-}
+} */
+
+.text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* number of lines to show */
+    -webkit-box-orient: vertical;
+ }

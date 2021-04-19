@@ -25,17 +25,14 @@ const CardRests= () =>{
         <div>
               <h1>RESTAURANTES</h1> 
             
-            
-           <div id="restaurantes">
+               
+           <div class="row card-deck col-12 m-3" style={{border:"0"}} id="restaurantes">
               { restaurantes.map(restaurante => ( 
-              <div id={restaurante.id}>
                   <CardRest props={restaurante}></CardRest>
-              </div>
            ))} 
            </div>
-           <Link to="/home/HomeRider">HomeRider</Link>
-      </div>
 
+      </div>
        );
 
     }

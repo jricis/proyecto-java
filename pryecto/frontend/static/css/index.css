@@ -1,12 +1,12 @@
 .home{
-    background-color: #FFBE35;
+    background-color: rgb(242, 157, 20);
 }
 
 .bloque1{
 
     height: 300px;
     width: 100%;
-    background-color: #FFBE35;
+    background-color: rgb(242, 157, 20);
 
 }
 
@@ -18,12 +18,37 @@
 
 }
 
+.fondo{
+
+    background-image: url("https://blog.mypos.eu/wp-content/uploads/2020/03/blogpost-min1.jpg");
+    background-size: cover;
+}
+
+.fondo2{
+    background-image: url("https://adventuresinqa.com/wp-content/uploads/2018/06/Mobile-User-Expectations-Adventures-in-QA-1024x482.jpeg");
+    background-repeat: no-repeat;
+    
+    
+
+}
+
+.img-logo{
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: auto;
+    width: auto;
+    background-color: rgb(242, 157, 20);
+
+}
+
+
 /* Estilos del Registro */
 
 .body-form{
 
-    background-color: #FFBE35;
-}
+    background-color: rgb(242, 157, 20);
+} 
 
 
 
@@ -152,22 +177,42 @@ a:link, a:visited, a:active {
 
 /* Inicio estilos de Footer */
 
-/* .footer{
-    
-    height: 300px;
-    width: 100%;
-    background-color: rgb(36, 36, 36);
-    
-    color: white;
-    font-family: sans-serif;
-    font-size: 15px;
-} */
 
 a:link, a:visited, a:active {
     text-decoration:none;
 }
 /* Fin de estilos de Footer */
+
 body{
-    background-color: #FFBE35;
+
+    background-color: white;
     font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.navbar{
+
+    background-color: rgb(242, 157, 20);
+
+}
+
+.botones-nav{
+
+    background-color: rgb(41, 124, 206);
+    border-radius: 25px;
+    width: 150px;
+    color: white;
+   
+}
+
+.navegator{
+
+    margin-bottom: 60px;
+}
+
+
+.busqueda{
+
+    width: 900px;
+
 }

@@ -53,10 +53,12 @@ import { useForm } from 'react-hook-form';
         }
 
        return(
+        
+       
         <div className="container">
             <div className="formulario row d-flex justify-content-center position-absolute top-50 start-50 translate-middle  register-user" style={{width:"30%"}}>
                 <div className="mt-4 login-title d-flex justify-content-center">
-                    <p className="fs-2 fw-bolder">Iniciar sesión</p>
+                    <p className="fs-2 fw-bold">Iniciar sesión</p>
                 </div>
                 <form className="row d-flex justify-content-center formulario" onSubmit={handleSubmit(onSubmit)}>                            <div className="email-input d-flex justify-content-center row col-8">
                     <div className="email-input d-flex justify-content-center col-12">
@@ -103,6 +105,7 @@ import { useForm } from 'react-hook-form';
                 </form>
             </div>     
         </div>
+     
         
             
 

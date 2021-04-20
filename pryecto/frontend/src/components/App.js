@@ -1,4 +1,3 @@
-
 import React from 'react';
 import Buscador from './User/Buscador';
 import LoginUser from './User/LoginUser';
@@ -9,6 +8,8 @@ import Footer from './StaticComponents/Footer';
 import HomeRider from './Rider/HomeRider';
 import RegistroRestaurante from './Restaurante/RegistroRestaurant';
 import RegistroRider from './Rider/RegistroRider';
+import Header from './StaticComponents/Header';
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -21,7 +22,7 @@ function App() {
     <Router>
       <div>
         <div>
-          {/*header*/}
+          <Header></Header>
         </div>
         <br></br>
         <Switch>
@@ -31,10 +32,10 @@ function App() {
           <Route path="/home/registroUser">
             <RegistroUser></RegistroUser>
           </Route>
-          <Route path="/registroRestaurante">
+          <Route path="/home/registroRestaurante">
             <RegistroRestaurante></RegistroRestaurante>
           </Route>
-          <Route path="/registroRider">
+          <Route path="/home/registroRider/">
             <RegistroRider></RegistroRider>
           </Route>
           <Route path="/home/HomeRider/">
@@ -44,6 +45,9 @@ function App() {
             <LoginUser></LoginUser>
           </Route>
         </Switch>
+      </div>
+      <div>
+        <Footer></Footer>
       </div>
     </Router>
   );

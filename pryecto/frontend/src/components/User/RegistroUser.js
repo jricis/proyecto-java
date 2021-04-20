@@ -75,15 +75,13 @@ const RegistroUser = () => {
     }
 
     return (
-
-        <div className="container">
-            <div className="formulario row d-flex justify-content-center position-absolute top-50 start-50 translate-middle  register-user" style={{width:"30%"}}>
-                <div className="mt-4 register-title d-flex justify-content-center">
-                        <p className="fs-2 fw-bolder">Registro</p>
-                </div>
-                
+    <div className="fondo2 mt-5"> 
+        <div className="body-form-user row d-flex col-12"> 
+            <div align="right">
+            <div className="formulario row d-flex justify-content-center col register-user" style={{width:"30%"}}>
+                <p className="mt-3 fs-2 fw-bolder text-center">Registro</p>
                 <form className="row d-flex justify-content-center formulario" onSubmit={handleSubmit(onSubmit)}>
-                        <div className="name-input d-flex justify-content-center col-8">
+                        <div className="name-input d-flex justify-content-center col-12">
                         <input
                             name="nombre"
                             placeholder="👤  Nombre"
@@ -97,7 +95,7 @@ const RegistroUser = () => {
                             </span>
                         }
                     </div>
-                    <div className="surname-input d-flex-column justify-content-center  col-8">
+                    <div className="surname-input d-flex-column justify-content-center  col-12">
                         <input
                             name="surname"
                             placeholder="👤  Apellido"
@@ -111,7 +109,7 @@ const RegistroUser = () => {
                             </span>
                         }
                     </div>
-                    <div className="email-input d-flex-column-reverse justify-content-center  col-8">
+                    <div className="email-input d-flex-column-reverse justify-content-center  col-12">
                         <input
                             name="email"
                             placeholder="📧  Email"
@@ -125,7 +123,7 @@ const RegistroUser = () => {
                             </span>
                         }
                     </div>
-                    <div className="phone-input d-flex justify-content-center  col-8">
+                    <div className="phone-input d-flex justify-content-center  col-12">
 
                         <input
                             name="phone"
@@ -140,7 +138,7 @@ const RegistroUser = () => {
                             </span>
                         }
                     </div>
-                    <div className="password-input d-flex justify-content-center col-8">
+                    <div className="password-input d-flex justify-content-center col-12">
                         <input
                             name="password"
                             type="password"
@@ -155,7 +153,7 @@ const RegistroUser = () => {
                             </span>
                         }
                     </div>
-                    <div className="birthday-input d-flex justify-content-center col-8">
+                    <div className="birthday-input d-flex justify-content-center col-12">
                         <input
                             name="birthday"
                             type="date"
@@ -176,7 +174,10 @@ const RegistroUser = () => {
                 </form>
             </div>
         </div>
-
+        </div>
+        </div>
+        
+    
 
 
     );

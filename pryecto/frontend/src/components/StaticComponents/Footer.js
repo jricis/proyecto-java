@@ -1,10 +1,9 @@
 import React from 'react'
 
-
 const Footer = () => {
 
     return (
-        <footer class="text-center mt-5 text-white bg-dark text-lg-start">
+        <footer class="text-center mt-5 text-white bg-dark text-lg-start fixed-bottom">
             <div class="container p-4">
                 <div class="row">
                     <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
@@ -56,7 +55,7 @@ const Footer = () => {
                 </div>
             </div>
             <div class="text-center text-white bg-dark p-3">
-                © 2021 Copyright J.Cepas, S.Carbajosa, J.Ricis
+                © 2021 Multifood
             </div>
         </footer>
     );

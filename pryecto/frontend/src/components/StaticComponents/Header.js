@@ -1,5 +1,6 @@
 import React from 'react';
 import logo1 from '../../imagenes/logo1.png';
+import {Link} from 'react-router-dom';
 
 
 const Header = () => {
@@ -12,7 +13,7 @@ const Header = () => {
                     <img src={logo1} alt="logo" width="270" height="70"/>
                 </a>
                     <form class="d-flex">
-                        <button class="btn botones-nav me-2" type="submit" href="#">Regístrate</button>
+                        <button class="btn botones-nav me-2" type="submit"><Link to="/home/registroUser">Regístrate</Link></button>
                         <button class="btn botones-nav me-2" type="submit" href="#">Login</button>
                     </form>
             </div>

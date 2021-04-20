@@ -45,6 +45,7 @@ function App() {
             <LoginUser></LoginUser>
           </Route>
         </Switch>
+        <Footer></Footer>
       </div>
       <div>
         <Footer></Footer>

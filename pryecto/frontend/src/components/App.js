@@ -1,6 +1,7 @@
 import React from 'react';
 import Buscador from './User/Buscador';
 import LoginUser from './User/LoginUser';
+import LoginRider from './Rider/LoginRider';
 import RegistroUser from './User/RegistroUser';
 import CardRests from './Restaurante/CardRests';
 import CardsTrabaja from './StaticComponents/CardsTrabaja';
@@ -35,14 +36,17 @@ function App() {
           <Route path="/home/registroRestaurante">
             <RegistroRestaurante></RegistroRestaurante>
           </Route>
-          <Route path="/home/registroRider/">
+          <Route path="/home/RegistroRider/">
             <RegistroRider></RegistroRider>
           </Route>
-          <Route path="/home/HomeRider/">
+          <Route path="/home/HomeRider/:data">
             <HomeRider></HomeRider>
           </Route>
           <Route path="/home/LoginUser/">
             <LoginUser></LoginUser>
+          </Route>
+          <Route path="/home/LoginRider/">
+            <LoginRider></LoginRider>
           </Route>
         </Switch>
         <Footer></Footer>

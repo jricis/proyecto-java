@@ -7,7 +7,8 @@ urlpatterns = [
   path('home/',index),
   path('home/registroUser/',index),
   path('home/registroRestaurante/',index),
-  path('home/registroRider/',index),
-  path('home/HomeRider/',index),
-  path('home/LoginUser/',index)
+  path('home/RegistroRider/',index),
+  path('home/HomeRider/<uuid:uuid>/',index),
+  path('home/LoginUser/',index),
+  path('home/LoginRider/',index)
 ]

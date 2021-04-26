@@ -1,17 +1,19 @@
 import React, { Fragment, useState } from 'react';
 import { useForm } from 'react-hook-form';
-
+import axios from 'axios'
 const RegistroRider = () => {
 
     const [user, useUser] = useState({
         nombre: "",
         surname: "",
         email: "",
+        postalcode: "",
+        city: "",
         phone: "",
         password: "",
         birthday: "",
         vehicle: "",
-        libre:"",
+        libre: true,
 
     })
 
@@ -40,11 +42,29 @@ const RegistroRider = () => {
         useUser({ ...user, vehicle: e.target.value })
 
     }
-    
+
     const handleChangeLibre = (e) => {
         useUser({ ...user, libre: e.target.value })
 
     }
+    const handleChangeBirthday = (e) => {
+        useUser({ ...user, birthday: e.target.value })
+
+    }
+    const handleChangeAdress = (e) => {
+        useUser({ ...user, adress: e.target.value })
+
+    }
+    const handleChangePostalCode = (e) => {
+        useUser({ ...user, postalcode: e.target.value })
+
+    }
+    const handleChangeCity = (e) => {
+        useUser({ ...user, city: e.target.value })
+
+    }
+
+
 
 
     const { register, errors, handleSubmit } = useForm();
@@ -59,25 +79,54 @@ const RegistroRider = () => {
 
         })
         console.log(user.data)
-
         try {
-            const { data } = axios.post(
-                "http://127.0.0.1:8000/api/restaurant/",
+            axios.post(
+                "http://127.0.0.1:8000/api/user/",
                 {
                     name: user.nombre,
-                    surname: user.nombre,
+                    surname: user.surname,
                     email: user.email,
+                    postalcode: user.postalcode,
+                    city: user.city,
                     phone: parseInt(user.phone),
                     password: user.adress,
                     birthday: user.birthday,
-                    vehicle: user.vehicle,
-                    libre: user.libre,
+                })
+                .then(function (res) {
+                    if (res.status == 201) {
+                        var idUser = res.data.id
+                        try {
+                            axios.post(
+                                "http://127.0.0.1:8000/api/rider/",
 
-                }
-            )
-        } catch (error) {
+                                {
+                                    type_vehicle: user.vehicle,
+                                    libre: user.libre,
+                                    userrider: idUser
+
+                                })
+                                .then(function (res) {
+                                    console.log(res.status)
+                                    if (res.status == 201) {
+                                        window.location.href = "http://127.0.0.1:8000/home/HomeRider/" + idUser
+                                    }
+                                    if (res.status != 201) {
+                                        axios.delete("http://127.0.0.1:8000/api/user/" + idUser)
+                                    }
+                                })
+                        } catch (error) {
+                            console.log(error)
+                        }
+                    }
+                })
+
+
+        }
+        catch (error) {
             console.log(error)
         }
+
+
 
 
     }
@@ -85,13 +134,13 @@ const RegistroRider = () => {
     return (
 
         <div className="container">
-            <div className="formulario row d-flex justify-content-center position-absolute top-50 start-50 translate-middle  register-user" style={{width:"30%"}}>
+            <div className="formulario row d-flex justify-content-center position-absolute top-50 start-50 translate-middle  register-user" style={{ width: "30%" }}>
                 <div className="mt-4 register-title d-flex justify-content-center">
-                        <p className="fs-2 fw-bolder">Registro</p>
+                    <p className="fs-2 fw-bolder">Registro</p>
                 </div>
-                
+
                 <form className="row d-flex justify-content-center formulario" onSubmit={handleSubmit(onSubmit)}>
-                        <div className="name-input d-flex justify-content-center col-8">
+                    <div className="name-input d-flex justify-content-center col-8">
                         <input
                             name="nombre"
                             placeholder="👤  Nombre"
@@ -133,6 +182,34 @@ const RegistroRider = () => {
                             </span>
                         }
                     </div>
+                    <div className="email-input d-flex-column-reverse justify-content-center  col-8">
+                        <input
+                            name="postalcode"
+                            placeholder="📧  Codigo postal"
+                            className="form-control my-2"
+                            onChange={handleChangePostalCode}
+                            ref={register()}
+                        ></input>
+                        {errors.postalcode &&
+                            <span className="text-danger text-small d-block mb-2">
+                                {errors.postalcode.message}
+                            </span>
+                        }
+                    </div>
+                    <div className="email-input d-flex-column-reverse justify-content-center  col-8">
+                        <input
+                            name="city"
+                            placeholder="📧  Ciudad"
+                            className="form-control my-2"
+                            onChange={handleChangeCity}
+                            ref={register()}
+                        ></input>
+                        {errors.city &&
+                            <span className="text-danger text-small d-block mb-2">
+                                {errors.city.message}
+                            </span>
+                        }
+                    </div>
                     <div className="phone-input d-flex justify-content-center  col-8">
 
                         <input
@@ -145,6 +222,20 @@ const RegistroRider = () => {
                         {errors.phone &&
                             <span className="text-danger text-small d-block mb-2">
                                 {errors.phone.messages}
+                            </span>
+                        }
+                    </div>
+                    <div className="surname-input d-flex-column justify-content-center  col-8">
+                        <input
+                            name="adress"
+                            placeholder="  Adress"
+                            className="form-control my-2"
+                            onChange={handleChangeAdress}
+                            ref={register()}
+                        ></input>
+                        {errors.surname &&
+                            <span className="text-danger text-small d-block mb-2">
+                                {errors.adress.messages}
                             </span>
                         }
                     </div>
@@ -178,35 +269,12 @@ const RegistroRider = () => {
                             </span>
                         }
                     </div>
-
-                    <div className="vehicle-input d-flex justify-content-center col-8">
-                        <input
-                            name="vehicle"
-                            placeholder="🛵  Tipo de vehiculo"
-                            className="form-control my-2"
-                            onChange={handleChangeVehicle}
-                            ref={register()}
-                        ></input>
-                        {errors.vehicle &&
-                            <span className="text-danger text-small d-block mb-2">
-                                {errors.vehicle.message}
-                            </span>
-                        }
-                    </div>
-                    <div className="libre-input d-flex justify-content-center col-8">
-                        <input
-                            name="libre"
-                            type="checkbox"
-                            className="form-control my-2"
-                            onChange={handleChangeLibre}
-                            ref={register()}
-                        ></input>
-                        {errors.libre &&
-                            <span className="text-danger text-small d-block mb-2">
-                                {errors.libre.message}
-                            </span>
-                        }
-                    </div>
+                    <select onChange={handleChangeVehicle} className="d-flex justify-content-center form-select " aria-label="Default select example">
+                        <option selected>🛵 Tipo de vehiculo</option>
+                        <option value="Moto">Moto</option>
+                        <option value="Bici">Bici</option>
+                        <option value="Patin">Patinete</option>
+                    </select>
 
                     <button onClick={handleSubmit} className="btn btn-primary mb-4 mt-4 col-5 row"> Aceptar </button>
 

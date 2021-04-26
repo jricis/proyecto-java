@@ -8,7 +8,7 @@ const Header = () => {
     return (
         
         <nav class="navbar nav">
-            <div class="container-fluid navegator">
+            <div class="container-fluid">
                 <a class="navbar-brand" href="/home">
                     <img src={logo1} alt="logo" width="270" height="70"/>
                 </a>
@@ -17,7 +17,7 @@ const Header = () => {
                         <button class="btn botones-nav me-2" type="submit" href="#">Login</button>
                     </form>
             </div>
-            <input class="form-control mb-5 mx-auto busqueda" type="search" 
+            <input class="form-control mb-5 mx-auto w-50" type="search" 
                 placeholder="Busca tu restaurante..." aria-label="Search"/>
         </nav>
 

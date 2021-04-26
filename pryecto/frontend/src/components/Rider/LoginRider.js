@@ -4,9 +4,10 @@ import {
     BrowserRouter as Router,
     Switch,
     Route,
-    Link  } from "react-router-dom";
+    Link
+  } from "react-router-dom";
 
-    const LoginUser = () =>{
+    const LoginRider = () =>{
 
         const [user,useUser]= useState({
             email:"",
@@ -52,10 +53,11 @@ import {
 
        return(
         
-
+       
+        <div className="container">
             <div className="formulario row d-flex justify-content-center position-absolute top-50 start-50 translate-middle  register-user" style={{width:"30%"}}>
                 <div className="mt-4 login-title d-flex justify-content-center">
-                    <p className="fs-2 fw-bold">Iniciar sesión</p>
+                    <p className="fs-2 fw-bold">Iniciar sesión 🛵</p>
                 </div>
                 <form className="row d-flex justify-content-center formulario" onSubmit={handleSubmit(onSubmit)}>                            <div className="email-input d-flex justify-content-center row col-8">
                     <div className="email-input d-flex justify-content-center col-12">
@@ -63,7 +65,6 @@ import {
                             name="email"
                             placeholder="📧  Email"
                             className="form-control my-2"
-                            style={{border: "1px solid"}}
                             onChange={handleChangeEmail}
                             ref={register()}
                             ></input>
@@ -78,8 +79,7 @@ import {
                                 name="password"
                                 type="password"
                                 placeholder="🔐  Contraseña"
-                                className="form-control my-2"
-                                style={{border: "1px solid"}}
+                                className="form-control my-2 "
                                 onChange={handleChangePassword}
                                 ref={register()}
                                 ></input>
@@ -96,23 +96,19 @@ import {
                                 </div>
                     </div>
                     <div class="row mt-3 g-3 d-flex col-12">
-                        <Link to="/home/RegistroUser">Registrate</Link>
+                        <Link to="/home/RegistroRider">Registrate</Link>
+                        {/* <p className="row col-12">¿No tienes cuenta? <a href="#" className="col-2">&nbsp;Regístrate</a></p> */}
                         <a className="row col-12" href="#">¿Olvidaste la contraseña?</a>
-                        <Link to="/home/LoginRider">Inicio sesión 🛵</Link>
                     </div>
                         <button onClick={handleSubmit} className="btn btn-primary mb-4 mt-4 col-5 row"> Log in </button>   
                     </div>    
                 </form>
-            </div>    
-     
-        
-            
-
-
+            </div>     
+        </div>
             );
                         
 }
 
 
 
-export default LoginUser; 
+export default LoginRider; 

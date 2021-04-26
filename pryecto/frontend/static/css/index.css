@@ -2,21 +2,6 @@
     background-color: rgb(242, 157, 20);
 }
 
-.bloque1{
-
-    height: 300px;
-    width: 100%;
-    background-color: rgb(242, 157, 20);
-
-}
-
-.bloque2{
-
-    height: 800px;
-    width: 100%;
-    background-color: white;
-
-}
 
 .fondo{
 
@@ -27,9 +12,6 @@
 .fondo2{
     background-image: url("https://adventuresinqa.com/wp-content/uploads/2018/06/Mobile-User-Expectations-Adventures-in-QA-1024x482.jpeg");
     background-repeat: no-repeat;
-    
-    
-
 }
 
 .img-logo{
@@ -45,31 +27,16 @@
 
 /* Estilos del Registro */
 
-.body-form{
-
-    background-color: rgb(242, 157, 20);
-} 
-
 
 
 .register-user{
-
-    
-    /* margin-top: auto;
-    margin-bottom: auto; */
     background: #fafafa;
-    /* position: relative;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    padding: 10px; */
-    /* width: 15%; */
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    border-radius: 5px;
-
-    
+    border-radius: 5px; 
+    height: auto;
+    width: auto;   
 }
 
 
@@ -80,44 +47,12 @@
 
 /* Estilos del Login */
 
-.formulario{
 
-    height: auto;
-    width: auto;
-    
-}
 
-.login-title{
-
-    margin-top: -280px;
-    font-size: 30px;
-    font-weight: 600;
-}
-
-.login-user{
-
-    height: 400px;
-    width: 350px;
-    margin-top: auto;
-    margin-bottom: auto;
-    background: #fafafa;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    padding: 10px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    -moz-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    border-radius: 5px;
-
-    
-}
-
-.remember-me{
+/* .remember-me{
     margin-top: 20px;
     margin-left: 70px;
-}
+} */
 
 
 
@@ -128,23 +63,10 @@
     
 }
 
+
 /* Fin de estilos de Login */
 
 /* Inicio de estilos de Home */
-
-/* .img-prueba{
-    height: 28px;
-    width: 100%;
-} */
-
-/* .tarjeta{
-
-    height: 128px;
-    width: 100%;
-
-} */
-
-
 
 .cerca{
    
@@ -177,6 +99,9 @@ a:link, a:visited, a:active {
 
 /* Inicio estilos de Footer */
 
+footer{
+    background-color: rgb(32, 32, 32);
+}
 
 a:link, a:visited, a:active {
     text-decoration:none;
@@ -205,14 +130,3 @@ body{
    
 }
 
-.navegator{
-
-    margin-bottom: 60px;
-}
-
-
-.busqueda{
-
-    width: 900px;
-
-}

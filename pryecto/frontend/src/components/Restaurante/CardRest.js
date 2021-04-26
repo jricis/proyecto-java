@@ -43,10 +43,7 @@ const CardRest = (props) => {
         }
         return () => mounted = false
     }, [])
-
-    function verDatos() {
-        console.log(restaurant)
-    }
+    
     return (
 
            

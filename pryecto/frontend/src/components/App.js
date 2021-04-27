@@ -17,6 +17,7 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import Perfil from './User/Perfil';
 
 function App() {
   return (
@@ -47,6 +48,9 @@ function App() {
           </Route>
           <Route path="/home/LoginRider/">
             <LoginRider></LoginRider>
+          </Route>
+          <Route path="/home/Perfil/:data">
+            <Perfil></Perfil>
           </Route>
         </Switch>
         <Footer></Footer>

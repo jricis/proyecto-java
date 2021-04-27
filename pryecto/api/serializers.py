@@ -26,7 +26,7 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
     pedidouser = PedidoSerializer(read_only=True,many=True)
     class Meta:
         model = User
-        fields = ('id','name','surname','email','postalcode','city','phone','birthday','password','created_at',"pedidouser")
+        fields = ('id','name','surname','email','adress','postalcode','city','phone','birthday','password','created_at',"pedidouser")
 class RiderSerializer(serializers.HyperlinkedModelSerializer):
     userrider=serializers.PrimaryKeyRelatedField(queryset=User.objects.all(),many=False)
     class Meta:

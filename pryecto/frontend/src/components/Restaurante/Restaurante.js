@@ -9,9 +9,9 @@ const Restaurante= () => {
                     <div className="d-flex col-6 register-user" style={{width:"30%"}}>
                         <div className="m-2 col justify-content-left">
                             <p className="font-weight-bold text-center ml-1 row col-4">Datos personales</p>
-                            <p>poner todos los datos del rider directamente</p>
-                            <p>poner todos los datos del rider directamente</p>
-                            <p>poner todos los datos del rider directamente</p>
+                            <p>poner todos los datos del restaurante directamente</p>
+                            <p>poner todos los datos del restaurante directamente</p>
+                            <p>poner todos los datos del restaurante directamente</p>
                         </div>
                     </div>
                     <div className="col-4">

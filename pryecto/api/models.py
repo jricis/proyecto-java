@@ -59,6 +59,7 @@ class Product(models.Model):
 class Pedido(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4,editable=False)
     user = models.ForeignKey(User, related_name="pedidouser", on_delete=models.CASCADE,blank=True,null=True) 
+    finalizado = models.BooleanField(default=False) 
      
 class Pedidos(models.Model):
     objects= None

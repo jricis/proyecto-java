@@ -4,7 +4,7 @@ import axios from 'axios'
 const RegistroRider = () => {
 
     const [user, useUser] = useState({
-        nombre: "",
+        name: "",
         surname: "",
         email: "",
         postalcode: "",
@@ -18,7 +18,7 @@ const RegistroRider = () => {
     })
 
     const handleChangeNombre = (e) => {
-        useUser({ ...user, nombre: e.target.value })
+        useUser({ ...user, name: e.target.value })
     }
 
     const handleChangeSurname = (e) => {
@@ -83,16 +83,18 @@ const RegistroRider = () => {
             axios.post(
                 "http://127.0.0.1:8000/api/user/",
                 {
-                    name: user.nombre,
+                    name: user.name,
                     surname: user.surname,
                     email: user.email,
                     postalcode: user.postalcode,
                     city: user.city,
+                    adress: user.adress,
                     phone: parseInt(user.phone),
-                    password: user.adress,
+                    password: user.password,
                     birthday: user.birthday,
                 })
                 .then(function (res) {
+                    console.log(res)
                     if (res.status == 201) {
                         var idUser = res.data.id
                         try {
@@ -133,42 +135,34 @@ const RegistroRider = () => {
 
     return (
 
-        <div className="container">
-            <div className="formulario row d-flex justify-content-center position-absolute top-50 start-50 translate-middle  register-user" style={{ width: "30%" }}>
-                <div className="mt-4 register-title d-flex justify-content-center">
-                    <p className="fs-2 fw-bolder">Registro</p>
+        <div className="container d-flex justify-content-center">
+            <div className="row  register-user" style={{ width: "40%" }}>
+                <div className="mt-4 d-flex justify-content-center">
+                    <p className="fs-2 fw-bolder">Registro Rider</p>
                 </div>
 
                 <form className="row d-flex justify-content-center formulario" onSubmit={handleSubmit(onSubmit)}>
-                    <div className="name-input d-flex justify-content-center col-8">
+                    <div className="d-flex justify-content-center col-12">
                         <input
-                            name="nombre"
+                            name="name"
                             placeholder="👤  Nombre"
                             className="form-control my-2"
                             onChange={handleChangeNombre}
                             ref={register()}
                         ></input>
-                        {errors.nombre &&
+                        {errors.name &&
                             <span className="text-danger text-small d-block mb-2">
-                                {errors.nombre.messages}
+                                {errors.name.messages}
                             </span>
                         }
-                    </div>
-                    <div className="surname-input d-flex-column justify-content-center  col-8">
-                        <input
-                            name="surname"
-                            placeholder="👤  Apellido"
-                            className="form-control my-2"
-                            onChange={handleChangeSurname}
-                            ref={register()}
-                        ></input>
+                        <input name="surname" placeholder="👤  Apellido" className="form-control my-2" onChange={handleChangeSurname} ref={register()}></input>
                         {errors.surname &&
                             <span className="text-danger text-small d-block mb-2">
                                 {errors.surname.messages}
                             </span>
                         }
                     </div>
-                    <div className="email-input d-flex-column-reverse justify-content-center  col-8">
+                    <div className="d-flex justify-content-center col-12">
                         <input
                             name="email"
                             placeholder="📧  Email"
@@ -181,8 +175,6 @@ const RegistroRider = () => {
                                 {errors.email.message}
                             </span>
                         }
-                    </div>
-                    <div className="email-input d-flex-column-reverse justify-content-center  col-8">
                         <input
                             name="postalcode"
                             placeholder="📧  Codigo postal"
@@ -196,7 +188,7 @@ const RegistroRider = () => {
                             </span>
                         }
                     </div>
-                    <div className="email-input d-flex-column-reverse justify-content-center  col-8">
+                    <div className="d-flex justify-content-center col-12">
                         <input
                             name="city"
                             placeholder="📧  Ciudad"
@@ -209,8 +201,6 @@ const RegistroRider = () => {
                                 {errors.city.message}
                             </span>
                         }
-                    </div>
-                    <div className="phone-input d-flex justify-content-center  col-8">
 
                         <input
                             name="phone"
@@ -225,7 +215,7 @@ const RegistroRider = () => {
                             </span>
                         }
                     </div>
-                    <div className="surname-input d-flex-column justify-content-center  col-8">
+                    <div className="d-flex justify-content-center col-12">
                         <input
                             name="adress"
                             placeholder="  Adress"
@@ -238,23 +228,6 @@ const RegistroRider = () => {
                                 {errors.adress.messages}
                             </span>
                         }
-                    </div>
-                    <div className="password-input d-flex justify-content-center col-8">
-                        <input
-                            name="password"
-                            type="password"
-                            placeholder="🔐  Contraseña"
-                            className="form-control my-2"
-                            onChange={handleChangePassword}
-                            ref={register()}
-                        ></input>
-                        {errors.password &&
-                            <span className="text-danger text-small d-block mb-2">
-                                {errors.password.message}
-                            </span>
-                        }
-                    </div>
-                    <div className="birthday-input d-flex justify-content-center col-8">
                         <input
                             name="birthday"
                             type="date"
@@ -269,12 +242,29 @@ const RegistroRider = () => {
                             </span>
                         }
                     </div>
-                    <select onChange={handleChangeVehicle} className="d-flex justify-content-center form-select " aria-label="Default select example">
-                        <option selected>🛵 Tipo de vehiculo</option>
-                        <option value="Moto">Moto</option>
-                        <option value="Bici">Bici</option>
-                        <option value="Patin">Patinete</option>
-                    </select>
+                    <div className="d-flex justify-content-center col-8">
+                        <input
+                            name="password"
+                            type="password"
+                            placeholder="🔐  Contraseña"
+                            className="form-control my-2"
+                            onChange={handleChangePassword}
+                            ref={register()}
+                        ></input>
+                        {errors.password &&
+                            <span className="text-danger text-small d-block mb-2">
+                                {errors.password.message}
+                            </span>
+                        }
+                    </div>
+                    <div className="d-flex justify-content-center col-8">
+                        <select onChange={handleChangeVehicle} className="d-flex justify-content-center form-select " aria-label="Default select example">
+                            <option selected>🛵 Tipo de vehiculo</option>
+                            <option value="Moto">Moto</option>
+                            <option value="Bici">Bici</option>
+                            <option value="Patin">Patinete</option>
+                        </select>
+                    </div>
 
                     <button onClick={handleSubmit} className="btn btn-primary mb-4 mt-4 col-5 row"> Aceptar </button>
 

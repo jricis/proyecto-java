@@ -4,7 +4,7 @@ import axios from 'axios'
 
 const RegistroRestaurant =()=>{
 const [restaurante,useRestaurante]= useState({
-    nombre:"",
+    name:"",
     email:"",
     phone:"",
     adress:"",
@@ -15,7 +15,7 @@ const [restaurante,useRestaurante]= useState({
 })
 
     const handleChangeNombre=(e)=>{
-            useRestaurante({...restaurante,nombre:e.target.value})
+            useRestaurante({...restaurante,name:e.target.value})
         }
 
     const     handleChangeEmail=(e)=>{
@@ -104,7 +104,7 @@ const {register, errors, handleSubmit} = useForm();
             const{data}= axios.put(
                 "http://127.0.0.1:8000/api/restaurant/dcbb9c7f-a8c9-454f-9cc5-54e11b5adf89/",
                 {
-                    name : restaurante.nombre,
+                    name : restaurante.name,
                     email : restaurante.email,
                     phone: parseInt(restaurante.phone),
                     adress: restaurante.adress,
@@ -133,15 +133,15 @@ const {register, errors, handleSubmit} = useForm();
                     <form className="row d-flex justify-content-center formulario" onSubmit={handleSubmit(onSubmit)}>
                         <div className="name-input d-flex justify-content-center col-12">
                             <input
-                                name="nombre"
+                                name="name"
                                 placeholder="Nombre Restaurante"
                                 className="form-control my-2"
                                 onChange={handleChangeNombre}
                                 ref={register()}
                             ></input>
-                            { errors.nombre &&
+                            { errors.name &&
                             <span className="text-danger text-small d-block mb-2">
-                            {errors.nombre.messages}
+                            {errors.name.messages}
                             </span>
                             } 
                         </div>    

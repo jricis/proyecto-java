@@ -4,17 +4,19 @@ import { useForm } from 'react-hook-form';
 const RegistroUser = () => {
 
     const [user, useUser] = useState({
-        nombre: "",
+        name: "",
         surname: "",
         email: "",
         phone: "",
+        adress: "",
         password: "",
         birthday: "",
 
     })
 
+
     const handleChangeNombre = (e) => {
-        useUser({ ...user, nombre: e.target.value })
+        useUser({ ...user, name: e.target.value })
     }
 
     const handleChangeSurname = (e) => {
@@ -38,6 +40,18 @@ const RegistroUser = () => {
         useUser({ ...user, birthday: e.target.value })
 
     }
+    const handleChangeAdress = (e) => {
+        useUser({ ...user, adress: e.target.value })
+
+    }
+    const handleChangePostalCode = (e) => {
+        useUser({ ...user, postalcode: e.target.value })
+
+    }
+    const handleChangeCity = (e) => {
+        useUser({ ...user, city: e.target.value })
+
+    }
 
 
 
@@ -58,8 +72,8 @@ const RegistroUser = () => {
             const { data } = axios.post(
                 "http://127.0.0.1:8000/api/user/",
                 {
-                    name: user.nombre,
-                    surname: user.nombre,
+                    name: user.name,
+                    surname: user.name,
                     email: user.email,
                     phone: parseInt(user.phone),
                     password: user.adress,
@@ -75,41 +89,35 @@ const RegistroUser = () => {
     }
 
     return (
-    <div className="fondo2 mt-5"> 
-        <div className="body-form-user row d-flex col-12"> 
-            <div align="right">
-            <div className="formulario row d-flex justify-content-center col register-user" style={{width:"30%"}}>
-                <p className="mt-3 fs-2 fw-bolder text-center">Registro</p>
+        
+        <div className="container d-flex justify-content-center">
+            <div className="row  register-user" style={{ width: "40%" }}>
+                <div className="mt-4 d-flex justify-content-center">
+                    <p className="fs-2 fw-bolder">Registro</p>
+                </div>
+
                 <form className="row d-flex justify-content-center formulario" onSubmit={handleSubmit(onSubmit)}>
-                        <div className="name-input d-flex justify-content-center col-12">
+                    <div className="d-flex justify-content-center col-12">
                         <input
-                            name="nombre"
+                            name="name"
                             placeholder="👤  Nombre"
                             className="form-control my-2"
                             onChange={handleChangeNombre}
                             ref={register()}
                         ></input>
-                        {errors.nombre &&
+                        {errors.name &&
                             <span className="text-danger text-small d-block mb-2">
-                                {errors.nombre.messages}
+                                {errors.name.messages}
                             </span>
                         }
-                    </div>
-                    <div className="surname-input d-flex-column justify-content-center  col-12">
-                        <input
-                            name="surname"
-                            placeholder="👤  Apellido"
-                            className="form-control my-2"
-                            onChange={handleChangeSurname}
-                            ref={register()}
-                        ></input>
+                        <input name="surname" placeholder="👤  Apellido" className="form-control my-2" onChange={handleChangeSurname} ref={register()}></input>
                         {errors.surname &&
                             <span className="text-danger text-small d-block mb-2">
                                 {errors.surname.messages}
                             </span>
                         }
                     </div>
-                    <div className="email-input d-flex-column-reverse justify-content-center  col-12">
+                    <div className="d-flex justify-content-center col-12">
                         <input
                             name="email"
                             placeholder="📧  Email"
@@ -122,8 +130,32 @@ const RegistroUser = () => {
                                 {errors.email.message}
                             </span>
                         }
+                        <input
+                            name="postalcode"
+                            placeholder="📧  Codigo postal"
+                            className="form-control my-2"
+                            onChange={handleChangePostalCode}
+                            ref={register()}
+                        ></input>
+                        {errors.postalcode &&
+                            <span className="text-danger text-small d-block mb-2">
+                                {errors.postalcode.message}
+                            </span>
+                        }
                     </div>
-                    <div className="phone-input d-flex justify-content-center  col-12">
+                    <div className="d-flex justify-content-center col-12">
+                        <input
+                            name="city"
+                            placeholder="📧  Ciudad"
+                            className="form-control my-2"
+                            onChange={handleChangeCity}
+                            ref={register()}
+                        ></input>
+                        {errors.city &&
+                            <span className="text-danger text-small d-block mb-2">
+                                {errors.city.message}
+                            </span>
+                        }
 
                         <input
                             name="phone"
@@ -138,22 +170,19 @@ const RegistroUser = () => {
                             </span>
                         }
                     </div>
-                    <div className="password-input d-flex justify-content-center col-12">
+                    <div className="d-flex justify-content-center col-12">
                         <input
-                            name="password"
-                            type="password"
-                            placeholder="🔐  Contraseña"
+                            name="adress"
+                            placeholder="  Adress"
                             className="form-control my-2"
-                            onChange={handleChangePassword}
+                            onChange={handleChangeAdress}
                             ref={register()}
                         ></input>
-                        {errors.password &&
+                        {errors.surname &&
                             <span className="text-danger text-small d-block mb-2">
-                                {errors.password.message}
+                                {errors.adress.messages}
                             </span>
                         }
-                    </div>
-                    <div className="birthday-input d-flex justify-content-center col-12">
                         <input
                             name="birthday"
                             type="date"
@@ -168,14 +197,27 @@ const RegistroUser = () => {
                             </span>
                         }
                     </div>
+                    <div className="d-flex justify-content-center col-8">
+                        <input
+                            name="password"
+                            type="password"
+                            placeholder="🔐  Contraseña"
+                            className="form-control my-2"
+                            onChange={handleChangePassword}
+                            ref={register()}
+                        ></input>
+                        {errors.password &&
+                            <span className="text-danger text-small d-block mb-2">
+                                {errors.password.message}
+                            </span>
+                        }
+                    </div>
 
                     <button onClick={handleSubmit} className="btn btn-primary mb-4 mt-4 col-5 row"> Aceptar </button>
 
-                </form>
+                    </form>
+                </div>
             </div>
-        </div>
-        </div>
-        </div>
         
     
 

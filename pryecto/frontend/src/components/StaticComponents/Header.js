@@ -18,7 +18,7 @@ const Header = () => {
                     </form>
             </div>
             <input class="form-control mb-5 mx-auto w-50" type="search" 
-                placeholder="Busca tu restaurante..." aria-label="Search"/>
+                placeholder="🔎 Busca tu restaurante..." aria-label="Search"/>
         </nav>
 
 

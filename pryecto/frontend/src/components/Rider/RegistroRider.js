@@ -1,6 +1,8 @@
 import React, { Fragment, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import axios from 'axios'
+import Cookies from 'universal-cookie';
+
 const RegistroRider = () => {
 
     const [user, useUser] = useState({
@@ -110,6 +112,8 @@ const RegistroRider = () => {
                                 .then(function (res) {
                                     console.log(res.status)
                                     if (res.status == 201) {
+                                       const cookies = new Cookies();
+                                        cookies.set('idrider', idUser,{path:'/'})
                                         window.location.href = "http://127.0.0.1:8000/home/HomeRider/" + idUser
                                     }
                                     if (res.status != 201) {

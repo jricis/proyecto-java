@@ -1,5 +1,7 @@
 import React, { Fragment, useState } from 'react';
 import { useForm } from 'react-hook-form';
+import axios from 'axios';
+import {Link} from 'react-router-dom';
 
 const RegistroUser = () => {
 
@@ -213,7 +215,7 @@ const RegistroUser = () => {
                         }
                     </div>
 
-                    <button onClick={handleSubmit} className="btn btn-primary mb-4 mt-4 col-5 row"> Aceptar </button>
+                    <button onClick={handleSubmit} className="btn btn-primary mb-4 mt-4 col-5 row"> Enviar</button>
 
                     </form>
                 </div>

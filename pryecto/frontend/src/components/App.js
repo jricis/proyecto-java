@@ -10,6 +10,7 @@ import HomeRider from './Rider/HomeRider';
 import RegistroRestaurante from './Restaurante/RegistroRestaurant';
 import RegistroRider from './Rider/RegistroRider';
 import Header from './StaticComponents/Header';
+import Restaurante from './Restaurante/Restaurante';
 
 import {
   BrowserRouter as Router,
@@ -51,6 +52,9 @@ function App() {
           </Route>
           <Route path="/home/Perfil/:data">
             <Perfil></Perfil>
+          </Route>
+          <Route path="/home/Restaurante/:data">
+            <Restaurante></Restaurante>
           </Route>
         </Switch>
         <Footer></Footer>

@@ -32,8 +32,14 @@ const Header = () => {
                                 <button class="btn botones-nav me-2"><Link to={"/home/HomeRider/"+cookies.get('idRider')} style={{color:'white'}}>Mi perfil</Link></button>
                                 <button class="btn botones-nav me-2" onClick={logout}> Salir</button>
                              </div>
-                        : <p>Hola soy r</p>
-                    : <p>hola soy u</p> 
+                        : <div class="d-flex">
+                            <button class="btn botones-nav me-2"><Link to={"/home/Restaurante/"+cookies.get('idrestaurante')} style={{color:'white'}}>Mi perfil</Link></button>
+                            <button class="btn botones-nav me-2" onClick={logout}> Salir</button>
+                          </div>
+                    : <div class="d-flex">
+                        <button class="btn botones-nav me-2"><Link to={"/home/Perfil/"+cookies.get('iduser')} style={{color:'white'}}>Mi perfil</Link></button>
+                        <button class="btn botones-nav me-2" onClick={logout}> Salir</button>
+                      </div>
                 }
                     
             </div>

@@ -2,6 +2,8 @@ import React, { Fragment, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
+import Cookies from 'universal-cookie';
+
 
 const RegistroUser = () => {
 
@@ -58,7 +60,7 @@ const RegistroUser = () => {
 
 
     const { register, errors, handleSubmit } = useForm();
-
+    const cookies = new Cookies()
 
     const onSubmit = (data, e) => {
         console.log(data);
@@ -71,18 +73,27 @@ const RegistroUser = () => {
         console.log(user.data)
 
         try {
-            const { data } = axios.post(
+             axios.post(
                 "http://127.0.0.1:8000/api/user/",
                 {
                     name: user.name,
-                    surname: user.name,
+                    surname: user.surname,
                     email: user.email,
                     phone: parseInt(user.phone),
-                    password: user.adress,
+                    password: user.password,
+                    adress:user.adress,
                     birthday: user.birthday,
 
                 }
+                
             )
+            .then(res=>{
+                if(res.status==201){
+                    cookies.set('iduser',res.data.id,{path:'/'})
+                    window.location.href = "/home"
+                }
+            })
+            console.log(data)
         } catch (error) {
             console.log(error)
         }

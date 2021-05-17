@@ -73,7 +73,7 @@ class Pedidos(models.Model):
     num_pedidos = models.PositiveIntegerField(default=0,unique=True)
     total_price = models.DecimalField(max_digits=5, decimal_places=2)
     entregado = models.BooleanField(default=False)
-    estado = models.CharField(max_length=45, choices= EligeEstado.choices, default=EligeEstado.RECIBIDO)
+    estado = models.CharField(max_length=45, choices= EligeEstado.choices, default=EligeEstado.COCINANDO)
     pagado = models.BooleanField(default=False)
     restaurants = models.ForeignKey(Restaurant,related_name="pedidosrestaurant", on_delete=models.CASCADE,blank=True,null=True)
     rider = models.OneToOneField(Rider, on_delete=models.CASCADE,related_name="pedidosrider", blank=True, null=True)

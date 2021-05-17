@@ -1,5 +1,5 @@
 import React,{useState,useEffect} from 'react';
-import {useParams} from 'react-router-dom'
+import {useParams} from 'react-router-dom';
 import { comproveRestaurant, comproveUser , comproveRider} from '../FuncionesApi/ComproveCookie';
 import {getRestRestaurantWithId} from '../FuncionesApi/GetRest'
 import AmountRestaurante from './AmountRestaurante'

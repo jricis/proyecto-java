@@ -24,6 +24,7 @@ const ViewPedidosRestaurant = () => {
                             <p className="font-weight-bold text-center ml-1 row col-12">Ciudad: </p>
                             <p className="font-weight-bold text-center ml-1 row col-12">Vehículo:</p>
                         </div>
+                        <button>Pedido finalizado</button>
                     </div>
                 </div>
             </div>

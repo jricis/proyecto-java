@@ -72,7 +72,7 @@ const {register, errors, handleSubmit} = useForm();
                 console.log(res)
                 if(res.status==201){
                     //create cookie
-                    window.location.href="home/Restaurante/"+res.data.id
+                    window.location.href="/home/Restaurante/"+res.data.id
                 }
             })
         

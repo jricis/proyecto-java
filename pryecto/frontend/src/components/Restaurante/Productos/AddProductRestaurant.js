@@ -95,7 +95,7 @@ const [producto,useProducto]= useState({
             <div className="body-form-rest row d-flex col-12"> 
             <div className="m-2" align="right">
             <div className="formulario row d-flex justify-content-center col register-user" style={{width:"40%"}}>
-                        <p className="mt-4 fs-2 fw-bolder text-center">Asóciate con nosotros</p>
+                        <p className="mt-4 fs-2 fw-bolder text-center">Añadir productos</p>
                     <form className="row d-flex justify-content-center formulario" onSubmit={handleSubmit(onSubmit)}>
                         <div className="d-flex justify-content-center col-12">
                             <input
@@ -135,26 +135,11 @@ const [producto,useProducto]= useState({
                                 onChange={handleChangeDescription}
                                 ref={register()}
                             ></input>
-                            { errors.phone &&
+                            { errors.description &&
                             <span className="text-danger text-small d-block mb-2">
-                            {errors.phone.messages}
+                            {errors.description.messages}
                             </span>
                             }
-                        </div>
- 
-                        <div className="description-input d-flex-column justify-content-center  col-12"> 
-                            <input
-                                name="description"
-                                placeholder="📝   Descripción"
-                                className="form-control my-2"
-                                onChange={handleChangeDescription}
-                                ref={register()}
-                                ></input>
-                                { errors.descripcion &&
-                                <span className="text-danger text-small d-block mb-2">
-                                {errors.description.message}
-                                </span>
-                                }
                         </div>
                         <div className="imagen-input d-flex-column justify-content-center  col-12"> 
                             <input type="file" 

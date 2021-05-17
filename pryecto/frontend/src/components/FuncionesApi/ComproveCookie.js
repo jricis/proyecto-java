@@ -16,3 +16,9 @@ export function comproveRestaurant(){
     return cookies.get('idrestaurante')
     
 }
+export function logout() {
+    cookies.remove('idrider',{ path: '/' });
+    cookies.remove('idrestaurant',{ path: '/' });
+    cookies.remove('iduser',{ path: '/' });
+    window.location.href='/home';
+}

@@ -2,18 +2,12 @@ import React from 'react';
 import logo1 from '../../imagenes/logo1.png';
 import {Link} from 'react-router-dom';
 import Cookies from 'universal-cookie';
-
+import {logout} from '../FuncionesApi/ComproveCookie'
 const Header = () => {
     const cookies = new Cookies();
-    // cookies.set('idrider', 'Pacman', { path: '/' });
     console.log(cookies.get('iduser')==undefined);
 
-    function logout() {
-        cookies.remove('idrider',{ path: '/' });
-        cookies.remove('idrestaurant',{ path: '/' });
-        cookies.remove('iduser',{ path: '/' });
-        window.location.href='/home';
-    }
+ 
     return (
         
         <nav class="navbar nav">

@@ -11,8 +11,9 @@ import RegistroRestaurante from './Restaurante/RegistroRestaurant';
 import RegistroRider from './Rider/RegistroRider';
 import Header from './StaticComponents/Header';
 import Restaurante from './Restaurante/Restaurante';
-import ViewPedidosRestaurant from './Restaurante/Productos/ViewProductRestaurant'
+import ViewPedidosRestaurant from './Restaurante/Pedidos/ViewPedidosRestaurant'
 import Perfil from './User/Perfil';
+import ViewProductRestaurant from './Restaurante/Productos/ViewProductRestaurant'
 
 import {
   BrowserRouter as Router,
@@ -60,6 +61,9 @@ function App() {
           </Route>
           <Route path="/home/Restaurante/:data/Pedidos/">
             <ViewPedidosRestaurant></ViewPedidosRestaurant>
+          </Route>
+          <Route path="/home/ViewProductRestaurant/">
+          <ViewProductRestaurant></ViewProductRestaurant>
           </Route>
         </Switch>
         <Footer></Footer>

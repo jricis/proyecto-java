@@ -51,14 +51,7 @@ const {register, errors, handleSubmit} = useForm();
 
 
 
-    const onSubmit = (data, e) =>{
-        console.log(data);
-        e.preventDefault();
-        useRestaurante({
-            ...restaurante,
-            data
-
-        })
+    const onSubmit = () =>{
         console.log(restaurante.imagen)
         var formData = new FormData();
         var fileField = document.getElementById("foto")
@@ -73,18 +66,15 @@ const {register, errors, handleSubmit} = useForm();
         
 
         try{
-            const{data}= axios.post(
-                "http://127.0.0.1:8000/api/restaurant/",formData)
-                    // name : restaurante.nombre,
-                    // email : restaurante.email,
-                    // phone: parseInt(restaurante.phone),
-                    // adress: restaurante.adress,
-                    // city:restaurante.city,
-                    // postalcode:restaurante.postalcode,
-                    // description:restaurante.description,
-                    // imagen:formData,
-                
-           console.log(data)
+            axios.post(
+                "http://127.0.0.1:8000/api/restaurant/",formData)               
+            .then(res=>{
+                console.log(res)
+                if(res.status==201){
+                    //create cookie
+                    window.location.href="home/Restaurante/"+res.data.id
+                }
+            })
         
         }catch (error){
             console.log(error)
@@ -93,33 +83,7 @@ const {register, errors, handleSubmit} = useForm();
 
 
    
-    const onSubmit = (data, e) =>{
-        console.log(data);
-        e.preventDefault();
-        useRestaurente({
-            ...restaurante,
-            data
-        })
-        try{
-            const{data}= axios.put(
-                "http://127.0.0.1:8000/api/restaurant/dcbb9c7f-a8c9-454f-9cc5-54e11b5adf89/",
-                {
-                    name : restaurante.name,
-                    email : restaurante.email,
-                    phone: parseInt(restaurante.phone),
-                    adress: restaurante.adress,
-                    city:restaurante.city,
-                    postalcode:restaurante.postalcode,
-                    description:restaurante.description
-                }
-            )
 
-        }catch (error){
-            console.log(error)
-        }
-    
-        
-    }
 }
   
    

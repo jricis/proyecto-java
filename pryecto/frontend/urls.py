@@ -12,5 +12,6 @@ urlpatterns = [
   path('home/LoginUser/',index),
   path('home/Perfil/<uuid:uuid>/',index),
   path('home/LoginRider/',index),
-  path('home/Restaurante/<uuid:uuid>/',index)
+  path('home/Restaurante/<uuid:uuid>/',index),
+  path('home/Restaurante/<uuid:uuid>/Pedidos/',index),
 ]

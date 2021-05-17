@@ -11,6 +11,8 @@ import RegistroRestaurante from './Restaurante/RegistroRestaurant';
 import RegistroRider from './Rider/RegistroRider';
 import Header from './StaticComponents/Header';
 import Restaurante from './Restaurante/Restaurante';
+import ViewPedidosRestaurant from './Restaurante/Productos/ViewProductRestaurant'
+import Perfil from './User/Perfil';
 
 import {
   BrowserRouter as Router,
@@ -18,7 +20,7 @@ import {
   Route,
   Link
 } from "react-router-dom";
-import Perfil from './User/Perfil';
+
 
 function App() {
   return (
@@ -55,6 +57,9 @@ function App() {
           </Route>
           <Route path="/home/Restaurante/:data">
             <Restaurante></Restaurante>
+          </Route>
+          <Route path="/home/Restaurante/:data/Pedidos/">
+            <ViewPedidosRestaurant></ViewPedidosRestaurant>
           </Route>
         </Switch>
         <Footer></Footer>

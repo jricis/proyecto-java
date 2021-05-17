@@ -9,47 +9,7 @@ import {
 
 const LoginUser = () => {
 
-    const [user, useUser] = useState({
-        email: "",
-        password: "",
-
-    })
-
-
-    const handleChangeEmail = (e) => {
-        useUser({ ...user, email: e.target.value })
-    }
-
-
-
-    const handleChangePassword = (e) => {
-        useUser({ ...user, password: e.target.value })
-    }
-
-    const { register, errors, handleSubmit } = useForm();
-
-
-    const onSubmit = (data, e) => {
-        console.log(data);
-        e.preventDefault();
-        useUser({
-            ...user,
-            data
-        })
-        console.log(user.data)
-
-        try {
-            const { data } = axios.post(
-                "http://127.0.0.1:8000/api/restaurant/",
-                {
-                    email: user.email,
-                    password: user.adress,
-                }
-            )
-        } catch (error) {
-            console.log(error)
-        }
-    }
+ 
 
     return (
 

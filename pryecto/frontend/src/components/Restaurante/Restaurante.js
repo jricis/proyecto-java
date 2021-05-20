@@ -47,7 +47,6 @@ const Restaurante=()=>{
     },[])
     return (
         <div id="miPerfil">
-            <h1> Perfil Restaurante</h1>
             <AmountRestaurante restaurante={restaurante}></AmountRestaurante>
         </div>
     );

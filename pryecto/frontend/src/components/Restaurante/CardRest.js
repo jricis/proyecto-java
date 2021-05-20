@@ -46,11 +46,12 @@ const CardRest = (props) => {
     
     return (
 // añadir que la carta sea clicable y que vaya al restaurante pero con vista de usuario.
-           
-            <div class="card col-2" style={{margin:"5px", padding:"0px"}}>
-                <img class="card-img-top"  style={{width:"100%",height:"50%"}} src={restaurant.imagen} alt={restaurant.name}/>
-                <h5 class="card-title">{restaurant.name}</h5>
-                    <p class="card-text text">{restaurant.description}</p>
+           <div className="col-3">
+                <div class="card  mx-auto" style={{width:"80%", margin:"0px", padding:"0px"}}>
+                    <img class="card-img-top"  style={{width:"100%",height:"50%"}} src={restaurant.imagen} alt={restaurant.name}/>
+                    <h5 class="card-title">{restaurant.name}</h5>
+                        <p class="card-text text">{restaurant.description}</p>
+                </div>
             </div>
         );
 

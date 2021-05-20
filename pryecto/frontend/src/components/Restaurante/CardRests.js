@@ -23,9 +23,6 @@ const CardRests= () =>{
     return (
        
         <div>
-              <h1>RESTAURANTES</h1> 
-            
-               
            <div class="row card-deck col-12 m-3" style={{border:"0"}} id="restaurantes">
               { restaurantes.map(restaurante => ( 
                   <CardRest props={restaurante}></CardRest>

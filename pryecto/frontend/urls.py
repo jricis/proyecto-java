@@ -13,6 +13,6 @@ urlpatterns = [
   path('home/Perfil/<uuid:uuid>/',index),
   path('home/LoginRider/',index),
   path('home/Restaurante/<uuid:uuid>/',index),
-  path('home/Restaurante/<uuid:uuid>/Pedidos/',index),
-  path('home/ViewProductRestaurant/',index)
+  path('home/ViewProductRestaurant/<uuid:uuid>/',index),
+  path('home/LoginRestaurante',index)
 ]

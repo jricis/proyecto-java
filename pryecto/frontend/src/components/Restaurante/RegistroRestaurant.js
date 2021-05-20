@@ -1,11 +1,13 @@
 import React, { Fragment, useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import axios from 'axios'
+import {setCookieRestaurant} from '../FuncionesApi/ComproveCookie'
 
 const RegistroRestaurant =()=>{
 const [restaurante,useRestaurante]= useState({
-    name:"",
+   
     email:"",
+    password:"",
     phone:"",
     adress:"",
     city:"",
@@ -45,6 +47,10 @@ const [restaurante,useRestaurante]= useState({
     
     const     handleChangeFile=(e)=>{
         useRestaurante({...restaurante,imagen:e.target.files[0]})
+
+        }
+        const handleChangePassword = (e) => {
+            useRestaurante({ ...restaurante, password: e.target.value })
         }    
     
 const {register, errors, handleSubmit} = useForm();
@@ -56,6 +62,7 @@ const {register, errors, handleSubmit} = useForm();
         var formData = new FormData();
         var fileField = document.getElementById("foto")
         formData.append('name', restaurante.name);
+        formData.append('password',restaurante.password)
         formData.append('email', restaurante.email);
         formData.append('phone', restaurante.phone);
         formData.append('adress', restaurante.adress);
@@ -63,15 +70,15 @@ const {register, errors, handleSubmit} = useForm();
         formData.append('postalcode', restaurante.postalcode);
         formData.append('description', restaurante.description);
         formData.append('imagen', restaurante.imagen);
-        
+        console.log(formData)
 
         try{
             axios.post(
                 "http://127.0.0.1:8000/api/restaurant/",formData)               
             .then(res=>{
                 console.log(res)
-                if(res.status==201){
-                    //create cookie
+                if(res.status==201 ){
+                    setCookieRestaurant(res.data.id)
                     window.location.href="/home/Restaurante/"+res.data.id
                 }
             })
@@ -109,6 +116,19 @@ const {register, errors, handleSubmit} = useForm();
                             </span>
                             } 
                         </div>    
+                        <div className="password-input d-flex justify-content-center col-12">
+                        <input
+                            name="password"
+                            type="password"
+                            placeholder="🔐  Contraseña"
+                            className="form-control my-2"
+                            style={{ border: "1px solid" }}
+                            onChange={handleChangePassword}
+                         
+                        ></input>
+                       
+                        
+                    </div>
                         <div className="email-input d-flex-column justify-content-center  col-12">
                             <input
                                 name="email"

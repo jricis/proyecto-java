@@ -3,9 +3,12 @@ import logo1 from '../../imagenes/logo1.png';
 import {Link} from 'react-router-dom';
 import Cookies from 'universal-cookie';
 import {logout} from '../FuncionesApi/ComproveCookie'
+import {getAllCookies} from '../FuncionesApi/ComproveCookie'
+import { get } from 'react-hook-form';
 const Header = () => {
     const cookies = new Cookies();
-    console.log(cookies.get('iduser')==undefined);
+   
+    
 
  
     return (
@@ -15,8 +18,9 @@ const Header = () => {
                 <a class="navbar-brand" href="/home">
                     <img src={logo1} alt="logo" width="270" height="70"/>
                 </a>
+                
                 {cookies.get('iduser')==undefined
-                    ? cookies.get('idrestaurante')==undefined
+                    ? cookies.get('idrestaurant')==undefined
                         ? cookies.get('idrider')==undefined
                             ?<form class="d-flex">
                                 <button class="btn botones-nav me-2" ><Link to="/home/registroUser" style={{color:'white'}}>Regístrate</Link></button>
@@ -27,7 +31,7 @@ const Header = () => {
                                 <button class="btn botones-nav me-2" onClick={logout}> Salir</button>
                              </div>
                         : <div class="d-flex">
-                            <button class="btn botones-nav me-2"><Link to={"/home/Restaurante/"+cookies.get('idrestaurante')} style={{color:'white'}}>Mi perfil</Link></button>
+                            <button class="btn botones-nav me-2"><Link to={"/home/Restaurante/"+cookies.get('idrestaurant')} style={{color:'white'}}>Mi perfil</Link></button>
                             <button class="btn botones-nav me-2" onClick={logout}> Salir</button>
                           </div>
                     : <div class="d-flex">

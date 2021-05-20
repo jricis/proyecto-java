@@ -1,5 +1,7 @@
 import React, { Fragment, useState } from 'react';
 import { useForm } from 'react-hook-form';
+import {setCookieRider} from '../FuncionesApi/ComproveCookie'
+import axios from 'axios'
 import {
     BrowserRouter as Router,
     Switch,
@@ -29,23 +31,30 @@ const LoginRider = () => {
     const { register, errors, handleSubmit } = useForm();
 
 
-    const onSubmit = (data, e) => {
-        console.log(data);
-        e.preventDefault();
-        useUser({
-            ...user,
-            data
-        })
-        console.log(user.data)
-
+    const logIn = () => {
+      
         try {
-            const { data } = axios.post(
-                "http://127.0.0.1:8000/api/restaurant/",
-                {
-                    email: user.email,
-                    password: user.adress,
-                }
+           axios.get(
+                "http://127.0.0.1:8000/api/user/?email="+user.email,
+               
             )
+            .then(res=>{
+                if(res.status==200 && res.data.length==1){
+                    if(res.data[0].password==user.password){
+                        axios.get( "http://127.0.0.1:8000/api/rider/?userrider="+res.data[0].id)
+                        .then(resRider=>{
+                            if(resRider.status==200){
+                                if(resRider.data.length==1){
+                                    setCookieRider(resRider.data[0].id)
+                                    window.location.href="/home/rider/"+resRider.data[0].id
+                                }else{
+                                    alert("No eres un rider ves al login de user")
+                                }
+                            }
+                        })
+                    }
+                }
+            })
         } catch (error) {
             console.log(error)
         }
@@ -58,7 +67,7 @@ const LoginRider = () => {
             <div className="mt-4 d-flex justify-content-center">
                 <p className="fs-2 fw-bolder">Iniciar sesión 🛵</p>
             </div>
-            <form className="row d-flex justify-content-center formulario" onSubmit={handleSubmit(onSubmit)}>                            <div className="email-input d-flex justify-content-center row col-8">
+            <div className="row d-flex justify-content-center formulario" >                            <div className="email-input d-flex justify-content-center row col-8">
                 <div className="email-input d-flex justify-content-center col-12">
                     <input
                         name="email"
@@ -101,9 +110,9 @@ const LoginRider = () => {
                     <a className="row col-12" href="#">¿Olvidaste la contraseña?</a>
                     <Link to="/home/LoginRider">Inicio sesión</Link>
                 </div>
-                <button onClick={handleSubmit} className="btn btn-primary mb-4 mt-4 col-5 row"> Log in </button>
+                <button onClick={logIn} className="btn btn-primary mb-4 mt-4 col-5 row"> Log in </button>
             </div>
-            </form>
+            </div>
         </div>
     </div>
 

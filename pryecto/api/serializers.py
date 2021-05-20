@@ -43,5 +43,5 @@ class RestaurantSerializer(serializers.ModelSerializer):
     pedidosrestaurant = PedidosSerializer(read_only=True,many=True)
     class Meta:
         model = Restaurant
-        fields = ('id','name','email','phone','adress','city','postalcode','description','imagen','products','pedidosrestaurant')
+        fields = ('id','name','password','email','phone','adress','city','postalcode','description','imagen','products','pedidosrestaurant')
    

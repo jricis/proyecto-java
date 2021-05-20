@@ -11,7 +11,6 @@ import RegistroRestaurante from './Restaurante/RegistroRestaurant';
 import RegistroRider from './Rider/RegistroRider';
 import Header from './StaticComponents/Header';
 import Restaurante from './Restaurante/Restaurante';
-import ViewPedidosRestaurant from './Restaurante/Pedidos/ViewPedidosRestaurant'
 import Perfil from './User/Perfil';
 import ViewProductRestaurant from './Restaurante/Productos/ViewProductRestaurant'
 
@@ -59,11 +58,11 @@ function App() {
           <Route path="/home/Restaurante/:data">
             <Restaurante></Restaurante>
           </Route>
-          <Route path="/home/Restaurante/:data/Pedidos/">
-            <ViewPedidosRestaurant></ViewPedidosRestaurant>
+          <Route path="/home/LoginRestaurante">
+            <LoginRestaurante></LoginRestaurante>
           </Route>
-          <Route path="/home/ViewProductRestaurant/">
-          <ViewProductRestaurant></ViewProductRestaurant>
+          <Route path="/home/ViewProductRestaurant/:data">
+            <ViewProductRestaurant></ViewProductRestaurant>
           </Route>
         </Switch>
         <Footer></Footer>

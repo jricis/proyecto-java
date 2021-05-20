@@ -35,7 +35,7 @@ class RestaurantView(viewsets.ModelViewSet):
     queryset=Restaurant.objects.all()
     serializer_class= RestaurantSerializer
     filter_backends=[DjangoFilterBackend]
-    filterset_fields = ['name','adress']
+    filterset_fields = ['name','adress','email']
     #PUT
     def restaurant_details(self,request,pk):
         try:
@@ -101,7 +101,7 @@ class RiderView(viewsets.ModelViewSet):
     queryset=Rider.objects.all()
     serializer_class = RiderSerializer
     filter_backends=[DjangoFilterBackend]
-    filterset_fields = ['id']
+    filterset_fields = ['id','userrider']
     def rider_details(self,request,pk):
         try:
             rider=Rider.objects.get(pk=pk)

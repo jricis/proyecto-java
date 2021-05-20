@@ -19,6 +19,7 @@ class Restaurant(models.Model):
     phone = models.IntegerField(null=False,default=0)
     description = models.TextField(blank=True)
     imagen = models.ImageField( upload_to='imagenes/',null=True,blank=True)
+    password = models.CharField( max_length=50)
 #crea la tabla user
 class User(models.Model):
     objects = None

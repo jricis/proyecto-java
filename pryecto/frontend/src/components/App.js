@@ -13,6 +13,7 @@ import Header from './StaticComponents/Header';
 import Restaurante from './Restaurante/Restaurante';
 import Perfil from './User/Perfil';
 import ViewProductRestaurant from './Restaurante/Productos/ViewProductRestaurant'
+import LoginRestaurante from './Restaurante/LoginRestaurante'
 
 import {
   BrowserRouter as Router,

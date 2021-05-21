@@ -51,7 +51,7 @@ const [producto,useProducto]= useState({
 
         try{
             const{data}= axios.post(
-                "http://127.0.0.1:8000/api/product/",formData)
+                "http://multifood.me/api/product/",formData)
                 
            console.log(data)
            
@@ -71,7 +71,7 @@ const [producto,useProducto]= useState({
         })
         try{
             const{data}= axios.put(
-                "http://127.0.0.1:8000/api/product/dcbb9c7f-a8c9-454f-9cc5-54e11b5adf89/",
+                "http://multifood.me/api/product/dcbb9c7f-a8c9-454f-9cc5-54e11b5adf89/",
                 {
                     name : producto.name,
                     price : producto.price,

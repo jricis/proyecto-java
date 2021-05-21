@@ -74,7 +74,7 @@ const RegistroUser = () => {
 
         try {
              axios.post(
-                "http://127.0.0.1:8000/api/user/",
+                "http://multifood.me/api/user/",
                 {
                     name: user.name,
                     surname: user.surname,
@@ -104,7 +104,7 @@ const RegistroUser = () => {
     return (
         
         <div className="container d-flex justify-content-center">
-            <div className="row  register-user" style={{ width: "40%" }}>
+            <div className="row  fondo2 register-user" style={{ width: "40%" }}>
                 <div className="mt-4 d-flex justify-content-center">
                     <p className="fs-2 fw-bolder">Registro</p>
                 </div>

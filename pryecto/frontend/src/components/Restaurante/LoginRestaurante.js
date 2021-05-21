@@ -35,7 +35,7 @@ const {register, errors, handleSubmit} = useForm();
 
         try{
             axios.get(
-                "http://127.0.0.1:8000/api/restaurant/?email="+restaurante.email)               
+                "http://multifood.me/api/restaurant/?email="+restaurante.email)               
             .then(res=>{
                 console.log(res)
                 if(res.status==200){

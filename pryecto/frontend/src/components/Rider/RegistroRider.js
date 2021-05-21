@@ -83,7 +83,7 @@ const RegistroRider = () => {
         console.log(user.data)
         try {
             axios.post(
-                "http://127.0.0.1:8000/api/user/",
+                "http://multifood.me/api/user/",
                 {
                     name: user.name,
                     surname: user.surname,
@@ -101,7 +101,7 @@ const RegistroRider = () => {
                         var idUser = res.data.id
                         try {
                             axios.post(
-                                "http://127.0.0.1:8000/api/rider/",
+                                "http://multifood.me/api/rider/",
 
                                 {
                                     type_vehicle: user.vehicle,
@@ -114,10 +114,10 @@ const RegistroRider = () => {
                                     if (res.status == 201) {
                                        const cookies = new Cookies();
                                         cookies.set('idrider', idUser,{path:'/'})
-                                        window.location.href = "http://127.0.0.1:8000/home/HomeRider/" + idUser
+                                        window.location.href = "http://multifood.me/home/HomeRider/" + idUser
                                     }
                                     if (res.status != 201) {
-                                        axios.delete("http://127.0.0.1:8000/api/user/" + idUser)
+                                        axios.delete("http://multifood.me/api/user/" + idUser)
                                     }
                                 })
                         } catch (error) {

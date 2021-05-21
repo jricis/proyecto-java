@@ -74,7 +74,7 @@ const {register, errors, handleSubmit} = useForm();
 
         try{
             axios.post(
-                "http://127.0.0.1:8000/api/restaurant/",formData)               
+                "http://multifood.me/api/restaurant/",formData)               
             .then(res=>{
                 console.log(res)
                 if(res.status==201 ){
@@ -97,7 +97,7 @@ const {register, errors, handleSubmit} = useForm();
     return(
 
         <div className="container">
-            <div className="body-form-rest row d-flex col-12"> 
+            <div className="body-form-rest row d-flex col-12 fondo"> 
             <div className="m-2" align="right">
             <div className="formulario row d-flex justify-content-center col register-user" style={{width:"40%"}}>
                         <p className="mt-4 fs-2 fw-bolder text-center">Asóciate con nosotros</p>

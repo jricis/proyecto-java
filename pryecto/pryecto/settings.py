@@ -28,7 +28,7 @@ DEBUG = True
 CORS_ORIGIN_ALLOW_ALL= DEBUG
 
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["multifood.me"]
 
 
 # Application definition
@@ -91,7 +91,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
             'NAME': 'projecteDAW',
             'USER': 'root',
-            'PASSWORD': 'root',
+  	    'PASSWORD':'Jsj20210521@',
             'HOST': 'localhost',
             'PORT': '3306',
     }

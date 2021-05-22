@@ -42,11 +42,9 @@ const {register, errors, handleSubmit} = useForm();
                     if(res.data.length==1){
                         if(res.data[0].password==restaurante.password){
                             setCookieRestaurant(res.data[0].id)
-                            window.location.href="/home/Restaurante/"+res.data[0].id
+                            window.location.href="/restaurante/"+res.data[0].id
                         }
                     }
-                    //create cookie
-                    // window.location.href="/home/Restaurante/"+res.data.id
                 }
             })
         

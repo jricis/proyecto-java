@@ -29,7 +29,7 @@ export function logout() {
     cookies.remove('idrider',{ path: '/' });
     cookies.remove('idrestaurant',{ path: '/' });
     cookies.remove('iduser',{ path: '/' });
-    window.location.href='/home';
+    window.location.href='/';
 }
 
 export function getAllCookies(){

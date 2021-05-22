@@ -114,7 +114,7 @@ const RegistroRider = () => {
                                     if (res.status == 201) {
                                        const cookies = new Cookies();
                                         cookies.set('idrider', idUser,{path:'/'})
-                                        window.location.href = "http://multifood.me/home/HomeRider/" + idUser
+                                        window.location.href = "http://multifood.me/homerider/" + idUser
                                     }
                                     if (res.status != 201) {
                                         axios.delete("http://multifood.me/api/user/" + idUser)
@@ -139,13 +139,13 @@ const RegistroRider = () => {
 
     return (
 
-        <div className="container d-flex justify-content-center">
-            <div className="row  register-user" style={{ width: "40%" }}>
+        <div className="container d-flex justify-content-center col-6 col-sm-12 col-md-12">
+            <div className="row register-user" >
                 <div className="mt-4 d-flex justify-content-center">
                     <p className="fs-2 fw-bolder">Registro Rider</p>
                 </div>
 
-                <form className="row d-flex justify-content-center formulario" onSubmit={handleSubmit(onSubmit)}>
+                <form className="row d-flex justify-content-center formulario col-12 col-sm-12 col-md-12" onSubmit={handleSubmit(onSubmit)}>
                     <div className="d-flex justify-content-center col-12">
                         <input
                             name="name"

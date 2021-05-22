@@ -4,6 +4,7 @@ import React,{useState,useEffect} from 'react';
 import {useParams} from 'react-router-dom'
 import {getRestRiderWithUser,getRestUsuari} from '../FuncionesApi/GetRest'
 import AmountUser from './AmountUser';
+import axios from 'axios'
 const Perfil = () => {
 const {data} = useParams()
 
@@ -23,7 +24,7 @@ useEffect(()=>{
     let mounted = true;
     console.log(data)
         if(mounted){
-            getRestUsuari(data)
+            axios.get("http://multifood.me/api/user/"+data+"/?format=json")
             .then(user_data=>{
                 if(user_data.status==200){
                     if (mounted){

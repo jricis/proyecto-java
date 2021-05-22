@@ -11,15 +11,15 @@ const CardsTrabaja = () => {
         useRestaurente({ ...restaurante, url: e })
     }
 
-    const conexion = () => {
-        var url = "http://multifood.me/api/restaurant/?name=Durum"
-        axios.get(url)
-            .then(response => {
-                console.log(response.data[0].imagen)
-                obtenerUrl(response.data[0].imagen)
+    // const conexion = () => {
+    //     var url = "http://multifood.me/api/restaurant/?name=Durum"
+    //     axios.get(url)
+    //         .then(response => {
+    //             console.log(response.data[0].imagen)
+    //             obtenerUrl(response.data[0].imagen)
 
-            })
-    }
+    //         })
+    // }
 
     return (
 

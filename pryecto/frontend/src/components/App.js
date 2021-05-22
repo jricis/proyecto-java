@@ -12,9 +12,10 @@ import RegistroRider from './Rider/RegistroRider';
 import Header from './StaticComponents/Header';
 import Restaurante from './Restaurante/Restaurante';
 import Perfil from './User/Perfil';
-import ViewProductRestaurant from './Restaurante/Productos/ViewProductRestaurant';
+import AmountProducto from './Restaurante/Productos/AmountProductoRestaurant';
 import LoginRestaurante from './Restaurante/LoginRestaurante';
-import AddProductRestaurant form './Restaurante/Productos/AddProductRestaurant';
+import AddProductRestaurant from './Restaurante/Productos/AddProductRestaurant';
+import ViewProductUser from './User/Pedido/Productos/ViewProductUser';
 
 import {
   BrowserRouter as Router,
@@ -33,42 +34,45 @@ function App() {
         </div>
         <br></br>
         <Switch>
-          <Route path="/home" exact>
+          <Route path="/" exact>
             <CardRests></CardRests>
           </Route>
-          <Route path="/home/registroUser">
+          <Route path="/registrouser">
             <RegistroUser></RegistroUser>
           </Route>
-          <Route path="/home/registroRestaurante">
+          <Route path="/registrorestaurante">
             <RegistroRestaurante></RegistroRestaurante>
           </Route>
-          <Route path="/home/RegistroRider/">
+          <Route path="/registrorider/">
             <RegistroRider></RegistroRider>
           </Route>
-          <Route path="/home/HomeRider/:data">
+          <Route path="/homerider/:data">
             <HomeRider></HomeRider>
           </Route>
-          <Route path="/home/LoginUser/">
+          <Route path="/loginuser/">
             <LoginUser></LoginUser>
           </Route>
-          <Route path="/home/LoginRider/">
+          <Route path="/loginrider/">
             <LoginRider></LoginRider>
           </Route>
-          <Route path="/home/Perfil/:data">
+          <Route path="/perfil/:data">
             <Perfil></Perfil>
           </Route>
-          <Route path="/home/Restaurante/:data">
+          <Route path="/restaurante/:data">
             <Restaurante></Restaurante>
           </Route>
-          <Route path="/home/LoginRestaurante">
+          <Route path="/loginrestaurante">
             <LoginRestaurante></LoginRestaurante>
           </Route>
-          <Route path="/home/ViewProductRestaurant/:data">
-            <ViewProductRestaurant></ViewProductRestaurant>
+          <Route path="/viewproductrestaurant/:data">
+            <AmountProducto></AmountProducto>
           </Route>
-	  <Route path="/home/AddProductRestaurant/:data">
-	    <AddProductRestaurant></AddProductRestaurant>
-	  </Route>
+          <Route path="/addproductrestaurant/:data">
+            <AddProductRestaurant></AddProductRestaurant>
+          </Route>
+          <Route path="/viewproductuser/:data">
+            <ViewProductUser></ViewProductUser>
+          </Route>
         </Switch>
         <Footer></Footer>
       </div>

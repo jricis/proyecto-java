@@ -25,10 +25,10 @@ SECRET_KEY = 'dw!q#tafgc+i^3g=31xgco8d0z!s=$(@wd42r^(v@sgwvka3^f'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-CORS_ORIGIN_ALLOW_ALL= DEBUG
+CORS_ORIGIN_ALLOW_ALL= True
 
 
-ALLOWED_HOSTS = ["multifood.me"]
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'api.apps.ApiConfig',
     'rest_framework',
     'frontend.apps.FrontendConfig',
-    'django_filters'
+    'django_filters',
+    'corsheaders',
    
  
     
@@ -57,6 +58,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'pryecto.urls'
@@ -143,3 +145,4 @@ MEDIA_ROOT = os.path.join(BASE_DIR,'media')
 STACTICFILES_DIR = (
     os.path.join(BASE_DIR,'static'),
 )
+

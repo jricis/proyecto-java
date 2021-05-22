@@ -123,3 +123,18 @@ body{
    
 }
 
+.text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 6; /* number of lines to show */
+    -webkit-box-orient: vertical;
+ }
+#textdecoration{
+    textDecoration: 'none';
+    color: black;
+}
+
+#sizeImage{
+    min-height: 50%;
+}

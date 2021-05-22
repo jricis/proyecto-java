@@ -25,7 +25,7 @@ const AmountRestaurante= (restaurante) => {
                         </div>
                     </div>
                     <button class="btn botones-nav me-2" ><Link to={"/home/ViewProductRestaurant/"+restaurante.restaurante.id} style={{color:'white'}}>Mi carta</Link></button>
-                    <button class="btn botones-nav me-2" ><Link to={"/home/ViewProductRestaurant/"+restaurante.restaurante.id} style={{color:'white'}}>Añadir productos</Link></button>
+                    <button class="btn botones-nav me-2" ><Link to={"/home/AddProductRestaurant/"+restaurante.restaurante.id} style={{color:'white'}}>Añadir productos</Link></button>
                 </div>
             </div>
     );

@@ -15,7 +15,7 @@ const Header = () => {
         
         <nav class="navbar nav">
             <div class="container-fluid">
-                <a class="navbar-brand" href="/home">
+                <a class="navbar-brand" href="/">
                     <img src={logo1} alt="logo" width="270" height="70"/>
                 </a>
                 
@@ -23,19 +23,19 @@ const Header = () => {
                     ? cookies.get('idrestaurant')==undefined
                         ? cookies.get('idrider')==undefined
                             ?<form class="d-flex">
-                                <button class="btn botones-nav me-2" ><Link to="/home/registroUser" style={{color:'white'}}>Regístrate</Link></button>
-                                <button class="btn botones-nav me-2" href="#"><Link to="/home/LoginUser" style={{color:'white'}}>Login</Link></button>
+                                <button class="btn botones-nav me-2" ><Link to="/registrouser" style={{color:'white'}}>Regístrate</Link></button>
+                                <button class="btn botones-nav me-2" href="#"><Link to="/loginuser" style={{color:'white'}}>Login</Link></button>
                              </form>
                             :<div class="d-flex">
-                                <button class="btn botones-nav me-2"><Link to={"/home/HomeRider/"+cookies.get('idRider')} style={{color:'white'}}>Mi perfil</Link></button>
+                                <button class="btn botones-nav me-2"><Link to={"/homerider/"+cookies.get('idRider')} style={{color:'white'}}>Mi perfil</Link></button>
                                 <button class="btn botones-nav me-2" onClick={logout}> Salir</button>
                              </div>
                         : <div class="d-flex">
-                            <button class="btn botones-nav me-2"><Link to={"/home/Restaurante/"+cookies.get('idrestaurant')} style={{color:'white'}}>Mi perfil</Link></button>
+                            <button class="btn botones-nav me-2"><Link to={"/restaurante/"+cookies.get('idrestaurant')} style={{color:'white'}}>Mi perfil</Link></button>
                             <button class="btn botones-nav me-2" onClick={logout}> Salir</button>
                           </div>
                     : <div class="d-flex">
-                        <button class="btn botones-nav me-2"><Link to={"/home/Perfil/"+cookies.get('iduser')} style={{color:'white'}}>Mi perfil</Link></button>
+                        <button class="btn botones-nav me-2"><Link to={"/perfil/"+cookies.get('iduser')} style={{color:'white'}}>Mi perfil</Link></button>
                         <button class="btn botones-nav me-2" onClick={logout}> Salir</button>
                       </div>
                 }

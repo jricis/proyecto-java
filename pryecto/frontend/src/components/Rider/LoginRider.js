@@ -46,7 +46,7 @@ const LoginRider = () => {
                             if(resRider.status==200){
                                 if(resRider.data.length==1){
                                     setCookieRider(resRider.data[0].id)
-                                    window.location.href="/home/rider/"+resRider.data[0].id
+                                    window.location.href="/rider/"+resRider.data[0].id
                                 }else{
                                     alert("No eres un rider ves al login de user")
                                 }
@@ -106,9 +106,9 @@ const LoginRider = () => {
                     </div>
                 </div>
                 <div class="row mt-3 g-3 d-flex col-12">
-                    <Link to="/home/RegistroUser">Registrate</Link>
+                    <Link to="/registroUser">Registrate</Link>
                     <a className="row col-12" href="#">¿Olvidaste la contraseña?</a>
-                    <Link to="/home/LoginRider">Inicio sesión</Link>
+                    <Link to="/loginrider">Inicio sesión</Link>
                 </div>
                 <button onClick={logIn} className="btn btn-primary mb-4 mt-4 col-5 row"> Log in </button>
             </div>

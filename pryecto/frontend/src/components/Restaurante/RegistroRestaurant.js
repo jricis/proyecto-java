@@ -79,7 +79,7 @@ const {register, errors, handleSubmit} = useForm();
                 console.log(res)
                 if(res.status==201 ){
                     setCookieRestaurant(res.data.id)
-                    window.location.href="/home/Restaurante/"+res.data.id
+                    window.location.href="/restaurante/"+res.data.id
                 }
             })
         

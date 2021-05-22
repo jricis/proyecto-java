@@ -4,16 +4,17 @@ from .views import index
 
 urlpatterns = [
 
-  path('home/',index),
-  path('home/registroUser/',index),
-  path('home/registroRestaurante/',index),
-  path('home/RegistroRider/',index),
-  path('home/HomeRider/<uuid:uuid>/',index),
-  path('home/LoginUser/',index),
-  path('home/Perfil/<uuid:uuid>/',index),
-  path('home/LoginRider/',index),
-  path('home/Restaurante/<uuid:uuid>/',index),
-  path('home/ViewProductRestaurant/<uuid:uuid>/',index),
-  path('home/LoginRestaurante',index),
-  path('home/AddProductRestaurant/<uuid:uuid>/',index)
+  path('',index),
+  path('registrouser/',index),
+  path('registrorestaurante/',index),
+  path('registrorider/',index),
+  path('homerider/<uuid:uuid>/',index),
+  path('loginuser/',index),
+  path('perfil/<uuid:uuid>/',index),
+  path('loginrider/',index),
+  path('restaurante/<uuid:uuid>/',index),
+  path('viewproductrestaurant/<uuid:uuid>/',index),
+  path('loginrestaurante',index),
+  path('addproductrestaurant/<uuid:uuid>/',index),
+  path('viewproductuser/<uuid:uuid>',index)
 ]

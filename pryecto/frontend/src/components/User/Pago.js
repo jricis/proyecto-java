@@ -61,7 +61,7 @@ return(
             <img src={tarjeta} width="320px" height="180px" />
           </div>
                  
-        <Link to="/home"><button className="btn btn-success mb-4 mt-4 col-12" onClick={alerta}> Pagar </button></Link> 
+        <Link to="/"><button className="btn btn-success mb-4 mt-4 col-12" onClick={alerta}> Pagar </button></Link> 
         
         
       </form>

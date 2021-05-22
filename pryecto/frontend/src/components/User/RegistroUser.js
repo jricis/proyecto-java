@@ -90,7 +90,7 @@ const RegistroUser = () => {
             .then(res=>{
                 if(res.status==201){
                     cookies.set('iduser',res.data.id,{path:'/'})
-                    window.location.href = "/home"
+                    window.location.href = "/"
                 }
             })
             console.log(data)

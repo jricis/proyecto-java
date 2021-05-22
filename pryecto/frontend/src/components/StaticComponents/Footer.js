@@ -10,7 +10,7 @@ const Footer = () => {
             <div class="container p-4">
                 <div class="row">
                     <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
-                        <a class="footer-logo" href="/home">
+                        <a class="footer-logo" href="/">
                             <img src={logo2} alt="logo2" width="180" height="35"/>
                         </a>
                     </div>
@@ -19,14 +19,14 @@ const Footer = () => {
 
                         <ul class="links-footer list-unstyled mb-0">
                             <li class="mt-4">
-                                <Link to="/home/registroRestaurante" style={{color:"white"}}>Socio de restaurante</Link>
+                                <Link to="/registrorestaurante" style={{color:"white"}}>Socio de restaurante</Link>
                                 
                             </li>
                             <li class="mt-2">
-                                <Link to="/home/registroRider/" style={{color:"white"}}>Rider</Link>
+                                <Link to="/registrorider/" style={{color:"white"}}>Rider</Link>
                             </li>
                             <li class="mt-2">
-                                <Link to="/home/registroRider/"style={{color:"white"}}>Trabaja con nosotros</Link>
+                                <Link to="/registrorider/"style={{color:"white"}}>Trabaja con nosotros</Link>
                                 
                             </li>
                             

@@ -84,9 +84,9 @@ const LoginUser = () => {
                         </div>
                     </div>
                     <div class="row mt-3 g-3 d-flex col-12">
-                        <Link to="/home/RegistroUser">Registrate</Link>
+                        <Link to="/registrouser">Registrate</Link>
                         <a className="row col-12" href="#">¿Olvidaste la contraseña?</a>
-                        <Link to="/home/LoginRider">Inicio sesión 🛵</Link>
+                        <Link to="/loginrider">Inicio sesión 🛵</Link>
                     </div>
                     <button onClick={logIn} className="btn btn-primary mb-4 mt-4 col-5 row"> Log in </button>
                 </div>

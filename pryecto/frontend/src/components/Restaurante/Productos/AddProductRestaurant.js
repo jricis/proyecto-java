@@ -3,15 +3,18 @@
 import React, { Fragment, useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import axios from 'axios'
+import {useParams} from 'react-router-dom'
 
 const AddProductRestaurant =()=>{
+    
 const [producto,useProducto]= useState({
     name:"",
     price:"",
     description:"",
     imagen:null
-})
 
+})
+const {data} = useParams()
     const handleChangeNombre=(e)=>{
             useProducto({...producto,name:e.target.value})
         }
@@ -33,14 +36,8 @@ const [producto,useProducto]= useState({
 
 
 
-    const onSubmit = (data, e) =>{
-        console.log(data);
-        e.preventDefault();
-        useProducto({
-            ...producto,
-            data
-
-        })
+    const onSubmit = () =>{
+       
         console.log(producto.imagen)
         var formData = new FormData();
         var fileField = document.getElementById("foto")
@@ -48,44 +45,25 @@ const [producto,useProducto]= useState({
         formData.append('price', producto.price);
         formData.append('description', producto.description);
         formData.append('imagen', producto.imagen);
-
+        formData.append('id_restaurant',data)
         try{
-            const{data}= axios.post(
-                "http://multifood.me/api/product/",formData)
+            axios.post("http://multifood.me/api/product/",formData)
+            .then(res=>{
+                console.log(res)
+                if(res.status==201){
+                    window.location.href='/viewproductrestaurant/'+data
+                }
+            })
                 
-           console.log(data)
+          
            
         }catch (error){
-            console.log(error)
-        }
-     
-
-
-   
-    const onSubmit = (data, e) =>{
-        console.log(data);
-        e.preventDefault();
-        useRestaurente({
-            ...producto,
-            data
-        })
-        try{
-            const{data}= axios.put(
-                "http://multifood.me/api/product/dcbb9c7f-a8c9-454f-9cc5-54e11b5adf89/",
-                {
-                    name : producto.name,
-                    price : producto.price,
-                    description: producto.description,
-                    imagen:producto.imagen
-                }
-            )
-
-        }catch (error){
-            console.log(error)
+           
+             alert("No se ha podido añadir su producto vuelvo a intentarlo")
+          
         }
     
-        
-    }
+   
 }
   
    
@@ -96,7 +74,7 @@ const [producto,useProducto]= useState({
             <div className="m-2" align="right">
             <div className="formulario row d-flex justify-content-center col register-user" style={{width:"40%"}}>
                         <p className="mt-4 fs-2 fw-bolder text-center">Añadir productos</p>
-                    <form className="row d-flex justify-content-center formulario" onSubmit={handleSubmit(onSubmit)}>
+                    <div className="row d-flex justify-content-center formulario" >
                         <div className="d-flex justify-content-center col-12">
                             <input
                                 name="name"
@@ -156,9 +134,9 @@ const [producto,useProducto]= useState({
                                 </span>
                                 }
                         </div>
-                            <button onClick={handleSubmit} className="btn btn-primary mb-4 mt-4 col-5 row"> Agregar </button>
+                            <button onClick={onSubmit} className="btn btn-primary mb-4 mt-4 col-5 row"> Agregar </button>
 
-                    </form>
+                    </div>
                        
                 </div>
             </div>

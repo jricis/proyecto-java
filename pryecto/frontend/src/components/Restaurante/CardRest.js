@@ -43,16 +43,15 @@ const CardRest = (props) => {
         }
         return () => mounted = false
     }, [])
-    
+    function redirection() {
+        window.location.href='./viewproductuser/'+props.props.id
+    }
     return (
-// añadir que la carta sea clicable y que vaya al restaurante pero con vista de usuario.
-           <div className="card-group col-3 mb-3 mx-auto">
-                <div class="card  mx-auto" id="sizetarget" style={{width:"80%", margin:"0px", padding:"0px"}}>
-                <a href={"/home/ViewProductRestaurant/"+restaurant.id}id="textdecoration">
+           <div className="card-group col-12 col-xl-3 mb-3 col-md-12 col-sm-12 mx-auto">
+                <div class="card  mx-auto" id="sizetarget" onClick={redirection} style={{width:"80%", margin:"0px", padding:"0px"}}>
                     <img class="card-img-top" id="sizeImage"  style={{width:"100%",height:"50%"}} src={restaurant.imagen} alt={restaurant.name}/>
                     <h5 class="text-center mt-2"><strong>{restaurant.name}</strong></h5>
-                        <p class="card-text text-center" id="text">{restaurant.description}</p>
-                </a>
+                        <p class="card-text text-center" id="text">{restaurant.description}</p>    
                 </div>
             </div>
         );

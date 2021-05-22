@@ -12,8 +12,9 @@ import RegistroRider from './Rider/RegistroRider';
 import Header from './StaticComponents/Header';
 import Restaurante from './Restaurante/Restaurante';
 import Perfil from './User/Perfil';
-import ViewProductRestaurant from './Restaurante/Productos/ViewProductRestaurant'
-import LoginRestaurante from './Restaurante/LoginRestaurante'
+import ViewProductRestaurant from './Restaurante/Productos/ViewProductRestaurant';
+import LoginRestaurante from './Restaurante/LoginRestaurante';
+import AddProductRestaurant form './Restaurante/Productos/AddProductRestaurant';
 
 import {
   BrowserRouter as Router,
@@ -65,6 +66,9 @@ function App() {
           <Route path="/home/ViewProductRestaurant/:data">
             <ViewProductRestaurant></ViewProductRestaurant>
           </Route>
+	  <Route path="/home/AddProductRestaurant/:data">
+	    <AddProductRestaurant></AddProductRestaurant>
+	  </Route>
         </Switch>
         <Footer></Footer>
       </div>

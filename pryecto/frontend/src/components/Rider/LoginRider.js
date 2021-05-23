@@ -35,13 +35,13 @@ const LoginRider = () => {
 
         try {
             axios.get(
-                "http://multifood.me/api/user/?email=" + user.email,
+                "https://multifood.me/api/user/?email=" + user.email,
 
             )
                 .then(res => {
                     if (res.status == 200 && res.data.length == 1) {
                         if (res.data[0].password == user.password) {
-                            axios.get("http://multifood.me/api/rider/?userrider=" + res.data[0].id)
+                            axios.get("https://multifood.me/api/rider/?userrider=" + res.data[0].id)
                                 .then(resRider => {
                                     if (resRider.status == 200) {
                                         if (resRider.data.length == 1) {

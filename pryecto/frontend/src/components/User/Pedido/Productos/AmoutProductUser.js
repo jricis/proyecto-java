@@ -4,10 +4,6 @@ import {getRestProducts} from '../../../FuncionesApi/GetRest'
 import ViewProduct from './ViewProductUser'
 const AmountProductUser =()=>{
     const[productos,setProductos]=useState([])
-    const [datos,setDatos]=useState({
-        nombre:"",
-        id:""
-    })
     const {data}=useParams()
 
     useEffect(()=>{
@@ -21,11 +17,13 @@ const AmountProductUser =()=>{
     },[])
 
     return (
-        <div>
-            <h2 className="fw-bold"> {data.split("nombre-")[1]} </h2>
+        <div className="container">
+            <h2 className="fw-bold text-center"> {data.split("nombre-")[1]} </h2>
+            <div class="card-deck row" style={{border:"0"}} id="restaurantes">
             {productos.map(producto=>(
                 <ViewProduct producto={producto}></ViewProduct>
             ))}
+            </div>
         </div>
     )
 }

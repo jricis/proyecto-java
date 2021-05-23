@@ -44,7 +44,7 @@ const CardRest = (props) => {
         return () => mounted = false
     }, [])
     function redirection() {
-        window.location.href='./viewproductuser/'+props.props.id
+        window.location.href='./viewproductuser/'+props.props.id+"nombre-"+props.props.name
     }
     return (
             <div className="card-group col-12 col-xl-3 mb-3 col-md-12 col-sm-12 mx-auto">

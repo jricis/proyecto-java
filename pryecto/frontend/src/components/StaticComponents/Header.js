@@ -47,20 +47,11 @@ const Header = () => {
                         </button>
                         <button class="btn botones-nav me-2" onClick={logout}> Salir</button>
                         {
-                            cookies.get('carrito') == undefined
+                            cookies.get('carrito').length == 0
                                 ? <div class="d-flex">
-                                    <button class="btn botones-nav me-2">
-                                        <Link to={"/perfil/" + cookies.get('iduser')} style={{ color: 'white' }}>Mi perfil</Link>
-                                    </button>
-                                    <button class="btn botones-nav me-2" onClick={logout}> Salir</button>
-                                </div>
-                                : <div class="d-flex">
-                                    <button class="btn botones-nav me-2">
-                                        <Link to={"/perfil/" + cookies.get('iduser')} style={{ color: 'white' }}>Mi perfil</Link>
-                                    </button>
-                                    <button class="btn botones-nav me-2" onClick={logout}> Salir</button>
                                     <button class="btn botones-nav me-2" onClick={logout}> Pagar</button>
-                                </div>
+                                  </div> 
+                                : console.log('vacia')
                         }
                     </div>
                 }

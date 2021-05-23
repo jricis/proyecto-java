@@ -62,8 +62,8 @@ const LoginRider = () => {
 
     return (
 
-        <div className="container d-flex justify-content-center">
-        <div className="row  register-user" style={{ width: "40%" }}>
+        <div className="container d-flex justify-content-center col-xl-4 col-sm-12">
+        <div className="row  register-user">
             <div className="mt-4 d-flex justify-content-center">
                 <p className="fs-2 fw-bolder">Iniciar sesión 🛵</p>
             </div>

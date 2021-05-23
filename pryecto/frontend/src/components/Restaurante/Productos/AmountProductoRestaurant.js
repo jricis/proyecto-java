@@ -25,7 +25,7 @@ const AmountProducto = () => {
 
     return (
         <div>
-            <button class="btn botones-nav me-2" >
+            <button class="btn botones-nav m-2 me-2" >
                 <Link to={"/addproductrestaurant/" + data} style={{ color: 'white' }}>
                     Añadir producto</Link>
             </button>

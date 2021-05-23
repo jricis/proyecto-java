@@ -103,14 +103,14 @@ const RegistroUser = () => {
 
     return (
         
-        <div className="container d-flex justify-content-center">
-            <div className="row  fondo2 register-user" style={{ width: "40%" }}>
+        <div className="container d-flex justify-content-center col-xl-5 col-sm-12">
+            <div className="row  fondo2 register-user">
                 <div className="mt-4 d-flex justify-content-center">
                     <p className="fs-2 fw-bolder">Registro</p>
                 </div>
 
                 <form className="row d-flex justify-content-center formulario" onSubmit={handleSubmit(onSubmit)}>
-                    <div className="d-flex justify-content-center col-12">
+                    <div className="d-flex justify-content-center">
                         <input
                             name="name"
                             placeholder="👤  Nombre"

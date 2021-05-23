@@ -97,9 +97,9 @@ const {register, errors, handleSubmit} = useForm();
     return(
 
         <div className="container">
-            <div className="body-form-rest row d-flex col-12 fondo"> 
-            <div className="m-2" align="right">
-            <div className="formulario row d-flex justify-content-center col register-user" style={{width:"40%"}}>
+            <div className="body-form-rest row d-flex align-items-end flex-column col-12 fondo"> 
+            <div className="m-2 col-xl-4 col-sm-12" align="right">
+            <div className="formulario row d-flex justify-content-center register-user">
                         <p className="mt-4 fs-2 fw-bolder text-center">Asóciate con nosotros</p>
                     <form className="row d-flex justify-content-center formulario" onSubmit={handleSubmit(onSubmit)}>
                         <div className="name-input d-flex justify-content-center col-12">

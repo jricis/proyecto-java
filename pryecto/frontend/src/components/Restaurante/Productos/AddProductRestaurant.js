@@ -105,14 +105,14 @@ const {data} = useParams()
                         
                         </div>       
                         <div className="d-flex-column justify-content-center  col-12">
-                            <input
+                            <textarea
                                 name="description"
                                 placeholder="Descripción"
                                 type="text"
                                 className="form-control my-2"
                                 onChange={handleChangeDescription}
                                 ref={register()}
-                            ></input>
+                            ></textarea>
                             { errors.description &&
                             <span className="text-danger text-small d-block mb-2">
                             {errors.description.messages}

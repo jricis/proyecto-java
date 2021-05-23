@@ -139,13 +139,13 @@ const RegistroRider = () => {
 
     return (
 
-        <div className="container d-flex justify-content-center col-6 col-sm-12 col-md-12">
+        <div className="container d-flex justify-content-center col-xl-5 col-sm-12 col-md-12">
             <div className="row register-user" >
                 <div className="mt-4 d-flex justify-content-center">
                     <p className="fs-2 fw-bolder">Registro Rider</p>
                 </div>
 
-                <form className="row d-flex justify-content-center formulario col-12 col-sm-12 col-md-12" onSubmit={handleSubmit(onSubmit)}>
+                <form className="row d-flex justify-content-center formulario" onSubmit={handleSubmit(onSubmit)}>
                     <div className="d-flex justify-content-center col-12">
                         <input
                             name="name"

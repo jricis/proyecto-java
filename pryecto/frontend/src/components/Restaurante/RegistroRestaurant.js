@@ -1,7 +1,7 @@
 import React, { Fragment, useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
-import axios from 'axios'
-import {setCookieRestaurant} from '../FuncionesApi/ComproveCookie'
+import axios from 'axios';
+import {setCookieRestaurant} from '../FuncionesApi/ComproveCookie';
 
 const RegistroRestaurant =()=>{
 const [restaurante,useRestaurante]= useState({

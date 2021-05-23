@@ -142,7 +142,7 @@ const RegistroRider = () => {
         <div className="container d-flex justify-content-center col-xl-5 col-sm-12 col-md-12">
             <div className="row register-user" >
                 <div className="mt-4 d-flex justify-content-center">
-                    <p className="fs-2 fw-bolder">Registro Rider</p>
+                    <p className="fs-2 fw-bolder">Únete a nuestro equipo</p>
                 </div>
 
                 <form className="row d-flex justify-content-center formulario" onSubmit={handleSubmit(onSubmit)}>

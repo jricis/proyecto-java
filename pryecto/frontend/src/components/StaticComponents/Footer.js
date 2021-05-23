@@ -19,11 +19,11 @@ const Footer = () => {
 
                         <ul class="links-footer list-unstyled mb-0">
                             <li class="mt-4">
-                                <Link to="/registrorestaurante" style={{color:"white"}}>Socio de restaurante</Link>
+                                <Link to="/loginrestaurante" style={{color:"white"}}>Socio de restaurante</Link>
                                 
                             </li>
                             <li class="mt-2">
-                                <Link to="/registrorider/" style={{color:"white"}}>Rider</Link>
+                                <Link to="/loginrider/" style={{color:"white"}}>Rider</Link>
                             </li>
                             <li class="mt-2">
                                 <Link to="/registrorider/"style={{color:"white"}}>Trabaja con nosotros</Link>

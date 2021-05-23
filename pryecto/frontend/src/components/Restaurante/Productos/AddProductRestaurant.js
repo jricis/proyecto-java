@@ -70,9 +70,9 @@ const {data} = useParams()
     return(
 
         <div className="container">
-            <div className="body-form-rest row d-flex col-12"> 
-            <div className="m-2" align="right">
-            <div className="formulario row d-flex justify-content-center col register-user" style={{width:"40%"}}>
+            <div className="body-form-rest row d-flex d-flex justify-content-xl-center d-flex justify-content-center"> 
+            <div className="m-2 col-xl-4 col-sm-12">
+            <div className="formulario row register-user">
                         <p className="mt-4 fs-2 fw-bolder text-center">Añadir productos</p>
                     <div className="row d-flex justify-content-center formulario" >
                         <div className="d-flex justify-content-center col-12">
@@ -89,7 +89,7 @@ const {data} = useParams()
                             </span>
                             } 
                         </div>    
-                        <div className="d-flex-column justify-content-center  col-12">
+                        <div className="d-flex-column justify-content-center col-12">
                             <input
                                 name="price"
                                 placeholder="Precio"
@@ -119,7 +119,7 @@ const {data} = useParams()
                             </span>
                             }
                         </div>
-                        <div className="imagen-input d-flex-column justify-content-center  col-12"> 
+                        <div className="imagen-input d-flex-column justify-content-center col-12"> 
                             <input type="file" 
                                 name="imagen"
                                 placeholder="📸   Insertar foto"
@@ -134,8 +134,7 @@ const {data} = useParams()
                                 </span>
                                 }
                         </div>
-                            <button onClick={onSubmit} className="btn btn-primary mb-4 mt-4 col-5 row"> Agregar </button>
-
+                            <button onClick={onSubmit} className="btn btn-primary mb-4 mt-4 col-5 row"> Añadir </button>
                     </div>
                        
                 </div>

@@ -74,7 +74,7 @@ const {register, errors, handleSubmit} = useForm();
 
         try{
             axios.post(
-                "http://multifood.me/api/restaurant/",formData)               
+                "https://multifood.me/api/restaurant/",formData)               
             .then(res=>{
                 console.log(res)
                 if(res.status==201 ){

@@ -41,7 +41,7 @@ const LoginRestaurante = () => {
 
         try {
             axios.get(
-                "http://multifood.me/api/restaurant/?email=" + restaurante.email)
+                "https://multifood.me/api/restaurant/?email=" + restaurante.email)
                 .then(res => {
                     console.log(res)
                     if (res.status == 200) {

@@ -74,7 +74,7 @@ const RegistroUser = () => {
 
         try {
              axios.post(
-                "http://multifood.me/api/user/",
+                "https://multifood.me/api/user/",
                 {
                     name: user.name,
                     surname: user.surname,

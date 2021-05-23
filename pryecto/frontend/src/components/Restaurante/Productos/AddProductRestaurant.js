@@ -47,7 +47,7 @@ const {data} = useParams()
         formData.append('imagen', producto.imagen);
         formData.append('id_restaurant',data)
         try{
-            axios.post("http://multifood.me/api/product/",formData)
+            axios.post("https://multifood.me/api/product/",formData)
             .then(res=>{
                 console.log(res)
                 if(res.status==201){

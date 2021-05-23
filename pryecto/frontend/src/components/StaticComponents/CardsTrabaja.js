@@ -12,7 +12,7 @@ const CardsTrabaja = () => {
     }
 
     // const conexion = () => {
-    //     var url = "http://multifood.me/api/restaurant/?name=Durum"
+    //     var url = "https://multifood.me/api/restaurant/?name=Durum"
     //     axios.get(url)
     //         .then(response => {
     //             console.log(response.data[0].imagen)

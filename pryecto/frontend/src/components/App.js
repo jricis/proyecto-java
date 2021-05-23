@@ -15,7 +15,8 @@ import Perfil from './User/Perfil';
 import AmountProducto from './Restaurante/Productos/AmountProductoRestaurant';
 import LoginRestaurante from './Restaurante/LoginRestaurante';
 import AddProductRestaurant from './Restaurante/Productos/AddProductRestaurant';
-import ViewProductUser from './User/Pedido/Productos/ViewProductUser';
+import Pago from './User/Pago';
+import AmountProductUser from './User/Pedido/Productos/AmoutProductUser';
 
 import {
   BrowserRouter as Router,
@@ -71,7 +72,10 @@ function App() {
             <AddProductRestaurant></AddProductRestaurant>
           </Route>
           <Route path="/viewproductuser/:data">
-            <ViewProductUser></ViewProductUser>
+            <AmountProductUser></AmountProductUser>
+          </Route>
+          <Route path="/pago">
+            <Pago></Pago>
           </Route>
         </Switch>
         <Footer></Footer>

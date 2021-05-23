@@ -26,7 +26,7 @@ const LoginUser = () => {
     }
     const logIn=()=>{
         if(!(user.email=="" || user.password=="")){
-            axios.get("http://multifood.me/api/user/?email="+user.email)
+            axios.get("https://multifood.me/api/user/?email="+user.email)
             .then(res=>{
                 console.log(res)
                 if(res.status==200 && res.data.length==1){

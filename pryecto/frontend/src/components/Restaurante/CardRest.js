@@ -47,7 +47,7 @@ const CardRest = (props) => {
         window.location.href='./viewproductuser/'+props.props.id
     }
     return (
-           <div className="card-group col-12 col-xl-3 mb-3 col-md-12 col-sm-12 mx-auto">
+            <div className="card-group col-12 col-xl-3 mb-3 col-md-12 col-sm-12 mx-auto">
                 <div class="card  mx-auto" id="sizetarget" onClick={redirection} style={{width:"80%", margin:"0px", padding:"0px"}}>
                     <img class="card-img-top" id="sizeImage"  style={{width:"100%",height:"50%"}} src={restaurant.imagen} alt={restaurant.name}/>
                     <h5 class="text-center mt-2"><strong>{restaurant.name}</strong></h5>

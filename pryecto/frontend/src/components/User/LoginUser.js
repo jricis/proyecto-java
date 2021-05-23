@@ -35,7 +35,7 @@ const LoginUser = () => {
                         console.log(id)
                         setCookieUser(id)
                         
-                        window.location.href = "/home"
+                        window.location.href = "/"
                     }
                 }
             })

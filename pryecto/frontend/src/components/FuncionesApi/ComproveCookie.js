@@ -35,3 +35,24 @@ export function logout() {
 export function getAllCookies(){
     return cookies.getAll()
 }
+/////////////////////FUNCION APARTE PARA PEDIDO////////////////////////////////////
+
+export function searchProduct(array,indice,product){
+    if(indice==array.length){
+        return -1;
+    }
+    if(array[indice]==product){
+        return indice
+    }
+   return searchProduct(array,indice+1,product)
+}
+
+export function countProduct(array,indice,product,count=0){
+    if(indice==array.length){
+        return count;
+    }
+    if(array[indice]==product){
+        return countProduct(array,indice+1,product,count+1)
+    }
+   return countProduct(array,indice+1,product,count)
+}

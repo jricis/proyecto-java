@@ -8,7 +8,9 @@ import { get } from 'react-hook-form';
 const Header = () => {
     const cookies = new Cookies();
 
-
+function pagar() {
+    window.location.href='/pago';
+}
 
 
     return (
@@ -47,10 +49,12 @@ const Header = () => {
                         </button>
                         <button class="btn botones-nav me-2" onClick={logout}> Salir</button>
                         {
+
+                            //poner el .length
                             cookies.get('carrito').length == 0
                                 ? console.log('vacia')
                                 : <div class="d-flex">
-                                    <button class="btn botones-nav me-2" onClick={logout}> Pagar</button>
+                                    <button class="btn botones-nav me-2 col-sm-12" onClick={pagar}> Pagar</button>
                                 </div>
                         }
                     </div>

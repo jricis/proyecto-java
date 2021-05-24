@@ -4,6 +4,7 @@ import React,{useState,useEffect} from 'react';
 import {useParams} from 'react-router-dom'
 import {getRestRiderWithUser,getRestUsuari} from '../FuncionesApi/GetRest'
 import AmountUser from './AmountUser';
+import ViewPedidoUser from './Pedido/ViewPedidoUser'
 import axios from 'axios'
 const Perfil = () => {
 const {data} = useParams()
@@ -49,12 +50,13 @@ useEffect(()=>{
     
    
     return (
-
-           <div className="m-4">
-               <h1>Mi perfil</h1>
+        <div className="container">
+           <div className="m-4 row">
+               <h1 className="mb-4">¡Hola, {usuario.name}!</h1>
                 <AmountUser usuario= {usuario}></AmountUser>
+                <ViewPedidoUser></ViewPedidoUser>
             </div>
-                           
+            </div>                   
     );
 
 }

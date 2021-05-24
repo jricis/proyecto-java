@@ -77,7 +77,7 @@ class Pedidos(models.Model):
     estado = models.CharField(max_length=45, choices= EligeEstado.choices, default=EligeEstado.COCINANDO)
     pagado = models.BooleanField(default=False)
     restaurants = models.ForeignKey(Restaurant,related_name="pedidosrestaurant", on_delete=models.CASCADE,blank=True,null=True)
-    rider = models.OneToOneField(Rider, on_delete=models.CASCADE,related_name="pedidosrider", blank=True, null=True)
+    rider = models.ForeignKey(Rider, on_delete=models.CASCADE,related_name="pedidosrider", blank=True, null=True)
     id_pedido = models.ForeignKey(Pedido, related_name="pedidos", on_delete=models.CASCADE,blank=True,null=True)
     products = models.ManyToManyField(Product,related_name="products",blank=True,null=True)
     

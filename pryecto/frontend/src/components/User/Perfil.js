@@ -24,7 +24,7 @@ useEffect(()=>{
     let mounted = true;
     console.log(data)
         if(mounted){
-            axios.get("http://multifood.me/api/user/"+data+"/?format=json")
+            axios.get("https://multifood.me/api/user/"+data+"/?format=json")
             .then(user_data=>{
                 if(user_data.status==200){
                     if (mounted){

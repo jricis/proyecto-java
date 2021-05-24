@@ -17,5 +17,5 @@ urlpatterns = [
   path('loginrestaurante',index),
   path('addproductrestaurant/<uuid:uuid>/',index),
   path('viewproductuser/<path:slug>',index),
-  path('pago',index)
+  path('pago/<uuid:uuid>/',index)
 ]

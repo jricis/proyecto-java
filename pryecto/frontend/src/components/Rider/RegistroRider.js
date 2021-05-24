@@ -2,6 +2,8 @@ import React, { Fragment, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import axios from 'axios'
 import Cookies from 'universal-cookie';
+import registrorider from '../../imagenes/registrorider.jpg';
+
 
 const RegistroRider = () => {
 
@@ -139,12 +141,14 @@ const RegistroRider = () => {
 
     return (
 
-        <div className="container d-flex justify-content-center col-xl-5 col-sm-12 col-md-12">
-            <div className="row register-user" >
-                <div className="mt-4 d-flex justify-content-center">
-                    <p className="fs-2 fw-bolder">Únete a nuestro equipo</p>
-                </div>
-
+        <div className="container d-flex">
+        <div className="row d-flex justify-content-start col-md-8">
+        <img src={registrorider} width="1300px" height="600px"/>
+        </div>
+        <div className="row register-user justify-content-end">
+            <div className="mt-4 d-flex justify-content-center">
+                <p className="fs-2 fw-bolder">Únete a nuestro equipo</p>
+            </div>
                 <form className="row d-flex justify-content-center formulario" onSubmit={handleSubmit(onSubmit)}>
                     <div className="d-flex justify-content-center col-12">
                         <input

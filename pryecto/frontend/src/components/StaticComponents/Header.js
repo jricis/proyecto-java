@@ -9,7 +9,7 @@ const Header = () => {
     const cookies = new Cookies();
 
 function pagar() {
-    window.location.href='/pago';
+    window.location.href='/pago/'+cookies.get('iduser');
 }
 
 
@@ -51,9 +51,11 @@ function pagar() {
                         {
 
                             //poner el .length
-                            cookies.get('carrito').length == 0
+                            cookies.get('carrito') == undefined
                                 ? console.log('vacia')
-                                : <div class="d-flex">
+                                : cookies.get('carrito')  == 0
+                                ? null
+                                :<div class="d-flex">
                                     <button class="btn botones-nav me-2 col-sm-12" onClick={pagar}> Pagar</button>
                                 </div>
                         }

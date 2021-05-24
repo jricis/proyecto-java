@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import Cookies from "universal-cookie";
+import {useParams} from 'react-router-dom'
 import { searchProduct } from '../../../FuncionesApi/ComproveCookie'
 import { countProduct } from '../../../FuncionesApi/ComproveCookie'
 
 const cookies = new Cookies();
-
 const ViewProduct = (producto) => {
+
+    const {data}=useParams()
     if (cookies.get('carrito') == undefined) {
         cookies.set('carrito', [], { path: '/' })
     }
@@ -17,7 +19,9 @@ const ViewProduct = (producto) => {
         var productos = cookies.get("carrito")
         var productorestaurante = {
             idrestaurante:producto.producto.id_restaurant,
-            id:producto.producto.id
+            nombreRestaurant: data.split("nombre-")[1],
+            id:producto.producto.id,
+            price:producto.producto.price
         }
         productos.push(productorestaurante)
         cookies.set('carrito', productos, { path: "/" })
@@ -37,21 +41,12 @@ const ViewProduct = (producto) => {
         countProductHtml()
     }
 
-
     const countProductHtml = () => {
         var productos = cookies.get("carrito")
         var count = countProduct(productos, 0, producto.producto.id, 0)
         setUnidades(count)
-
-
     }
-
-
     return (
-        //tarjeta por cada producto para añadirlo al "carrito"
-
-
-
         <div class="card col-12 col-xl-3 mb-3 col-md-12 col-sm-12">
             <img class="card-img-top" style={{ width: "100%", height: "50%" }} src={producto.producto.imagen} alt={producto.producto.name} />
             <div class="card-body text-center">
@@ -63,16 +58,13 @@ const ViewProduct = (producto) => {
                 <button className="bg-white col-xl-6" style={{ border: 0 }} onClick={addProduct}><h3>+</h3></button>
                 <button className="bg-white col-xl-6" style={{ border: 0 }} onClick={deleteProduct}><h3>-</h3></button>
             </div>
-            { unidades == 0
-                ? null
-                : <h2>Unidades : {unidades}</h2>
-            }
+            <div class="unidades d-flex justify-content-center">
+                        {unidades == 0
+                            ? null
+                            : <h6>{producto.producto.name} : {unidades} uds.</h6> 
+                        }
+                    </div>
         </div>
-
-
-
-
-
     );
 }
 

@@ -27,3 +27,7 @@ export async function getRestPedidoIdRestaurant(id_restaurant){
     const api = await axios.get("https://multifood.me/api/pedido/?Restaurants="+id_restaurant)
     return api
 }
+export async function getRestProduct(id_product){
+    const api = await axios.get("https://multifood.me/api/product/"+id_product+"/?format=json")
+    return api
+}

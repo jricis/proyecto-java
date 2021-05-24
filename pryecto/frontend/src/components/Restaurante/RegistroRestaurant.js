@@ -2,6 +2,8 @@ import React, { Fragment, useState, useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
 import {setCookieRestaurant} from '../FuncionesApi/ComproveCookie';
+import registrorestaurante from '../../imagenes/registrorestaurante.jpg';
+
 
 const RegistroRestaurant =()=>{
 const [restaurante,useRestaurante]= useState({
@@ -96,16 +98,19 @@ const {register, errors, handleSubmit} = useForm();
    
     return(
 
-        <div className="container">
-            <div className="body-form-rest row d-flex align-items-end flex-column col-12 fondo"> 
-            <div className="m-2 col-xl-4 col-sm-12" align="right">
-            <div className="formulario row d-flex justify-content-center register-user">
-                        <p className="mt-4 fs-2 fw-bolder text-center">Asóciate con nosotros</p>
+        <div className="container d-flex">
+           <div className="row d-flex justify-content-start col-md-8">
+            <img src={registrorestaurante} width="2000px" height="700px"/>
+            </div>
+            <div className="row register-user justify-content-end">
+                <div className="mt-4 d-flex justify-content-center">
+                    <p className="fs-2 fw-bolder">Registra tu restaurante</p>
+                </div>
                     <form className="row d-flex justify-content-center formulario" onSubmit={handleSubmit(onSubmit)}>
                         <div className="name-input d-flex justify-content-center col-12">
                             <input
                                 name="name"
-                                placeholder="Nombre Restaurante"
+                                placeholder="👤  Nombre Restaurante"
                                 className="form-control my-2"
                                 onChange={handleChangeNombre}
                                 ref={register()}
@@ -162,7 +167,7 @@ const {register, errors, handleSubmit} = useForm();
                         <div className="adress-input d-flex-column justify-content-center  col-12">   
                             <input
                                 name="adress"
-                                placeholder="Dirección"
+                                placeholder="🏡 Dirección"
                                 className="form-control my-2"
                                 onChange={handleChangeadress}
                                 ref={register()}
@@ -236,8 +241,7 @@ const {register, errors, handleSubmit} = useForm();
                        
                 </div>
             </div>
-            </div>
-        </div>
+        
     
 
        );

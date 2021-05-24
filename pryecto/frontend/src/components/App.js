@@ -15,7 +15,7 @@ import Perfil from './User/Perfil';
 import AmountProducto from './Restaurante/Productos/AmountProductoRestaurant';
 import LoginRestaurante from './Restaurante/LoginRestaurante';
 import AddProductRestaurant from './Restaurante/Productos/AddProductRestaurant';
-import Pago from './User/Pago';
+import Pago from './User/Pedido/Pago';
 import AmountProductUser from './User/Pedido/Productos/AmoutProductUser';
 
 import {
@@ -74,7 +74,7 @@ function App() {
           <Route path="/viewproductuser/:data">
             <AmountProductUser></AmountProductUser>
           </Route>
-          <Route path="/pago">
+          <Route path="/pago/:data">
             <Pago></Pago>
           </Route>
         </Switch>

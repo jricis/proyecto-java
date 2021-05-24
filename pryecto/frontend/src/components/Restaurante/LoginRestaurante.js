@@ -8,6 +8,7 @@ import {
     Route,
     Link
 } from "react-router-dom";
+import loginrestaurante from '../../imagenes/loginrestaurante.jpg';
 
 const LoginRestaurante = () => {
     const [restaurante, useRestaurante] = useState({
@@ -67,47 +68,58 @@ const LoginRestaurante = () => {
 
     return (
 
-        <div className="container">
-            <div className="body-form-rest row d-flex align-items-end fondo flex-column">
-                <div className="m-2 col-xl-4 col-sm-12" align="right">
-                    <div className="formulario row d-flex justify-content-center col register-user">
-                        <p className="mt-4 fs-2 fw-bolder text-center">Inicia sesión</p>
-                        <div className="row d-flex justify-content-center formulario">
-                            <div className="email-input d-flex-column justify-content-center  col-12">
-                                <input
-                                    name="email"
-                                    placeholder="📧  Email"
-                                    className="form-control my-2"
-                                    onChange={handleChangeEmail}
-                                    ref={register()}>
-                                </input>
-                                {errors.email &&
-                                    <span className="text-danger text-small d-block mb-2">
-                                        {errors.email.message}
-                                    </span>
-                                }
-
-                            </div>
-                            <div className="password-input d-flex justify-content-center col-12">
-                                <input
-                                    name="password"
-                                    type="password"
-                                    placeholder="🔐  Contraseña"
-                                    className="form-control my-2"
-                                    onChange={handleChangePassword}> 
-                                </input>
-
-
-                            </div>
-                            <Link to="/registrorestaurante" className="d-flex justify-content-start">Registrate</Link>
-                            <button onClick={logIn} className="btn btn-primary mb-4 mt-4 col-5 row"> Iniciar sesión </button>
-
-                        </div>
+        <div className="container d-flex">
+            <div className="row">
+                <img src={loginrestaurante} width="1500px" height="600px" />
+            </div>
+            <div className="register-user">
+                <div className="mt-4 d-flex justify-content-center">
+                    <p className="fs-2 fw-bolder">Iniciar sesión</p>
+                </div>
+                <div className="row d-flex justify-content-center formulario">
+                    <div className="email-input d-flex justify-content-center row col-8">
+                    <div className="email-input d-flex justify-content-center mt-4 col-12">
+                        <input
+                            name="email"
+                            placeholder="📧  Email"
+                            className="form-control my-2"
+                            onChange={handleChangeEmail}
+                            ref={register()}>
+                        </input>
+                        {errors.email &&
+                            <span className="text-danger text-small d-block mb-2">
+                                {errors.email.message}
+                            </span>
+                        }
 
                     </div>
+                    <div className="password-input d-flex justify-content-center mt-3 col-12">
+                        <input
+                            name="password"
+                            type="password"
+                            placeholder="🔐  Contraseña"
+                            className="form-control my-2"
+                            onChange={handleChangePassword}>
+                        </input>
+
+
+                    </div>
+                    <div className="remember-me row d-flex justify-content-center mt-3 col-12">
+                        <div className="custom-control custom-checkbox">
+                            <input type="checkbox" />
+                            <label for="customControlInline">&nbsp;Remember me</label>
+                        </div>
+                    </div>
+                    <div class="row mt-3 g-3 d-flex col-12">
+                        <Link to="/registrorestaurante">Registrate</Link>
+                        <a className="row col-12" href="#">¿Olvidaste la contraseña?</a>
+                    </div>
+                    <button onClick={logIn} className="btn btn-primary mb-5 mt-5 col-5 row"> Inicia sesión </button>
                 </div>
             </div>
         </div>
+        </div>
+
 
 
     );

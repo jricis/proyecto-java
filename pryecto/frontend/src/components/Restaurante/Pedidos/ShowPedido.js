@@ -7,7 +7,7 @@ const ShowPedido=(pedido)=>{
 
         <div className="row d-flex justify-content-center formulario" >
                 <div className="n-pedido d-flex justify-content-left col-12 mt-3">
-                    <p>Nº pedido: {pedido.peddido.id}</p>
+                    <p>Nº pedido: {pedido.pedido.id}</p>
                 </div>
                 <div className="n-pedido d-flex justify-content-left col-12">
                     <p>Pedido: {}</p>

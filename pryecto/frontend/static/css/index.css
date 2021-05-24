@@ -2,24 +2,6 @@
     background-color: rgb(242, 157, 20);
 }
 
-
-.fondo{
-
-    background-image: url('../../src/imagenes/1.jpg');
-    background-size: cover;
-}
-
-.fondo2{
-    background-image: url("https://adventuresinqa.com/wp-content/uploads/2018/06/Mobile-User-Expectations-Adventures-in-QA-1024x482.jpeg");
-    background-repeat: no-repeat;
-    
-}
-.fondo3{
-    background-image: url("https://srito.es/wp-content/uploads/2018/09/fondo_restaurante.jpg");
-    background-repeat: no-repeat;
-    
-}
-
 .img-logo{
 
     background-repeat: no-repeat;

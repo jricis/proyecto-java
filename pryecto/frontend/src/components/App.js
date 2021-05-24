@@ -6,7 +6,6 @@ import RegistroUser from './User/RegistroUser';
 import CardRests from './Restaurante/CardRests';
 import CardsTrabaja from './StaticComponents/CardsTrabaja';
 import Footer from './StaticComponents/Footer';
-import HomeRider from './Rider/HomeRider';
 import RegistroRestaurante from './Restaurante/RegistroRestaurant';
 import RegistroRider from './Rider/RegistroRider';
 import Header from './StaticComponents/Header';
@@ -17,6 +16,7 @@ import LoginRestaurante from './Restaurante/LoginRestaurante';
 import AddProductRestaurant from './Restaurante/Productos/AddProductRestaurant';
 import Pago from './User/Pedido/Pago';
 import AmountProductUser from './User/Pedido/Productos/AmoutProductUser';
+import HomeRider from './Rider/HomeRider';
 
 import {
   BrowserRouter as Router,

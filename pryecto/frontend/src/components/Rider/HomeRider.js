@@ -26,14 +26,12 @@ const [usuario,setUsuario]=useState({
 
 useEffect(()=>{
     let mounted = true;
-    // console.log(data)
     getRestRiderWithUser(data)
     .then(rider_data=>{
        if(rider_data.status==200){
        console.log(rider_data.data);
             if(mounted){
                 setRider(rider_data.data[0])
-                
             }
             getRestUsuari(data)
             .then(user_data=>{

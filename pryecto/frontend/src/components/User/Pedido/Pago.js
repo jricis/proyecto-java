@@ -19,21 +19,14 @@ const Pago = () => {
   const {data}=useParams()
   const [productos,setProductos] = useState([])
   const [pedidos,setPedidos]=useState([])
-  const alerta = () => {
-    alert("Ha pagado correctamente")
-  }
+ 
 useEffect(()=>{
- 
- 
-  
  getPedidos()
   getProductos()
-  
-
 },[])
 const getPedidos=()=>{
   const pedidos = []
-  const listaProductos =new Array(cookies.get("carrito"))
+  const listaProductos = new Array(cookies.get("carrito"))
   console.log(listaProductos[0])
   const distinctRestaurantes = [... new Set(listaProductos[0].map(x=>x.idrestaurante))]
   distinctRestaurantes.map(restaurante=>{
@@ -148,7 +141,8 @@ const pagar=async ()=>{
    }
  })
  setTimeout(() => {
- 
+    cookies.remove('carrito')
+    window.location.href='/perfil/'+data;
 }, 2000);
  
 }

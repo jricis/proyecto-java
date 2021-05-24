@@ -11,7 +11,7 @@ export async function getRestProducts(id_restaurant){
     return api
 }
 export async function getRestRiderWithUser(id_user){
-    const api = await axios.get("https://multifood.me/api/rider/?userrider="+id_user)
+    const api = await axios.get("https://multifood.me/api/rider/?format=json&&userrider="+id_user)
     return api
 }
 export async function getRestUsuari(id_user){

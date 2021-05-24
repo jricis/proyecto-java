@@ -48,10 +48,10 @@ const Header = () => {
                         <button class="btn botones-nav me-2" onClick={logout}> Salir</button>
                         {
                             cookies.get('carrito').length == 0
-                                ? <div class="d-flex">
+                                ? console.log('vacia')
+                                : <div class="d-flex">
                                     <button class="btn botones-nav me-2" onClick={logout}> Pagar</button>
-                                  </div> 
-                                : console.log('vacia')
+                                </div>
                         }
                     </div>
                 }

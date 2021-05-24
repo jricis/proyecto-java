@@ -1,33 +1,30 @@
-import React,{useState,useEffect} from 'react';
-import agregar from '../../../../imagenes/+.png';
-import quitar from '../../../../imagenes/-.png';
+import React, { useState, useEffect } from 'react';
 import Cookies from "universal-cookie";
-import {searchProduct} from '../../../FuncionesApi/ComproveCookie'
-import {countProduct} from '../../../FuncionesApi/ComproveCookie'
+import { searchProduct } from '../../../FuncionesApi/ComproveCookie'
+import { countProduct } from '../../../FuncionesApi/ComproveCookie'
 
 const cookies = new Cookies();
 
 const ViewProduct = (producto) => {
-    if (cookies.get('carrito')==undefined) {
+    if (cookies.get('carrito') == undefined) {
         cookies.set('carrito', [], { path: '/' })
     }
-    
+
     var productos = cookies.get("carrito")
     const [unidades, setUnidades] = useState(countProduct(productos, 0, producto.producto.id, 0))
 
     const addProduct = () => {
-
-        if (cookies.get('carrito') == undefined) {
-            cookies.set('carrito', [producto.producto.id], { path: '/' })
-
-        } else {
-            var productos = cookies.get("carrito")
-            productos.push(producto.producto.id)
-            cookies.set('carrito', productos, { path: "/" })
+        var productos = cookies.get("carrito")
+        var productorestaurante = {
+            idrestaurante:producto.producto.id_restaurant,
+            id:producto.producto.id
         }
+        productos.push(productorestaurante)
+        cookies.set('carrito', productos, { path: "/" })
         console.log(cookies.get('carrito'))
         countProductHtml()
     }
+
     const deleteProduct = () => {
         var productos = cookies.get("carrito")
         var iproduct = searchProduct(productos, 0, producto.producto.id)
@@ -63,13 +60,13 @@ const ViewProduct = (producto) => {
                 <p class="card-text text-center text">{producto.producto.description}</p>
             </div>
             <div class="card-footer row bg-white">
-                <button className="bg-white col-xl-6" style={{ border:0 }} onClick={addProduct}><h3>+</h3></button>
-                <button className="bg-white col-xl-6" style={{ border:0 }} onClick={deleteProduct}><h3>-</h3></button>
+                <button className="bg-white col-xl-6" style={{ border: 0 }} onClick={addProduct}><h3>+</h3></button>
+                <button className="bg-white col-xl-6" style={{ border: 0 }} onClick={deleteProduct}><h3>-</h3></button>
             </div>
             { unidades == 0
                 ? null
                 : <h2>Unidades : {unidades}</h2>
-                }
+            }
         </div>
 
 

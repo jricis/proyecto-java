@@ -9,7 +9,7 @@ const ViewProductPedido=(producto)=>{
         <tr>
                 <td>{producto.producto.productoCompleto.name}</td>
                 <td>{producto.producto.unidades}</td>
-                <td>{(parseFloat(producto.producto.productoCompleto.price)*producto.producto.unidades)}</td>
+                <td>{(parseFloat(producto.producto.productoCompleto.price)*producto.producto.unidades)} €</td>
                 <td>{producto.producto.nombreRest}</td>
 
                 

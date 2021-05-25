@@ -33,12 +33,15 @@ const AmountPedidoUser =()=>{
 
     return(
 
-       <div>
-           <h2>Pedido</h2>
+      <div className="row mt-5 justify-content-center">
+      <div className="row d-flex register-user" style={{ width: "40%" }}>
+        <div className="fs-2 fw-bold mt-3">
+          <p>Tu pedido</p>
+        </div>
             {
                 productos.length==0
                 ? <h1> No hay pedidos actuales</h1>
-                : <table>
+                : <table className="mb-4">
                 <thead>
                    <tr>
                      <th scope="col">Producto</th>
@@ -58,6 +61,7 @@ const AmountPedidoUser =()=>{
                  </table>
             }
           
+       </div>
        </div>
     )
 }

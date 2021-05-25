@@ -1,13 +1,13 @@
 import React,{useState,useEffect} from 'react'
 import {useParams} from 'react-router-dom'
-import {getRestPedidoIdRestaurant} from '../../FuncionesApi/GetRest'
+import {getRestPedidosIdRestaurant} from '../../FuncionesApi/GetRest'
 import ShowPedido from './ShowPedido'
 
 const AmountPedidos =()=>{
     const [pedidos,setPedidos] = useState([])
     const {data} =useParams()
     useEffect(()=>{
-    getRestPedidoIdRestaurant(data)
+    getRestPedidosIdRestaurant(data)
       .then(listaPedidos=>{
         setPedidos(listaPedidos.data)
       })

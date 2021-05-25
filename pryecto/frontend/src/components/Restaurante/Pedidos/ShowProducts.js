@@ -1,15 +1,15 @@
-import React from 'react'
-import { Link } from 'react-router-dom';
+// import React from 'react'
+// import { Link } from 'react-router-dom';
 
 
-    return (
+//     return (
 
-        <tr>
-            <td>{producto.producto.productoCompleto.name}</td>
-            <td>{producto.producto.unidades}</td>
-        </tr>
+//         // <tr>
+//         //     <td>{producto.producto.productoCompleto.name}</td>
+//         //     <td>{producto.producto.unidades}</td>
+//         // </tr>
         
-    )
+//     )
 
 
-export default ShowProducts
+// export default ShowProducts

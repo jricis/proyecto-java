@@ -8,6 +8,9 @@ import {
     Route,
     Link
 } from "react-router-dom";
+import loginuser from '../../imagenes/loginuser.jpg';
+
+
 
 const LoginUser = () => {
     const [user,useUser] = useState({
@@ -43,16 +46,19 @@ const LoginUser = () => {
        
     }
     return (
-
-
-        <div className="container d-flex justify-content-center col-xl-4 col-sm-12">
-            <div className="row  register-user">
+        
+        
+        <div className="container d-flex">
+            <div className="row d-flex justify-content-start col-md-8">
+            <img src={loginuser} width="1300px" height="600px"/>
+            </div>
+            <div className="row register-user justify-content-end">
                 <div className="mt-4 d-flex justify-content-center">
                     <p className="fs-2 fw-bolder">Iniciar sesión</p>
                 </div>
-                <div className="row d-flex justify-content-center formulario" >
+                <div className="d-flex justify-content-center formulario">
                     <div className="email-input d-flex justify-content-center row col-8">
-                    <div className="email-input d-flex justify-content-center col-12">
+                    <div className="email-input d-flex justify-content-center mt-4 col-12">
                         <input
                             name="email"
                             placeholder="📧  Email"
@@ -64,7 +70,7 @@ const LoginUser = () => {
                     
                         
                     </div>
-                    <div className="password-input d-flex justify-content-center col-12">
+                    <div className="password-input d-flex justify-content-center mt-3 col-12">
                         <input
                             name="password"
                             type="password"
@@ -77,7 +83,7 @@ const LoginUser = () => {
                        
                         
                     </div>
-                    <div className="remember-me row d-flex justify-content-center col-12">
+                    <div className="remember-me row d-flex justify-content-center mt-3 col-12">
                         <div className="custom-control custom-checkbox">
                             <input type="checkbox" />
                             <label for="customControlInline">&nbsp;Remember me</label>
@@ -88,12 +94,12 @@ const LoginUser = () => {
                         <a className="row col-12" href="#">¿Olvidaste la contraseña?</a>
                         <Link to="/loginrider">Inicio sesión 🛵</Link>
                     </div>
-                    <button onClick={logIn} className="btn btn-primary mb-4 mt-4 col-5 row"> Log in </button>
+                    <button onClick={logIn} className="btn btn-primary mb-5 mt-5 col-5 row"> Inicia sesión </button>
                 </div>
                 </div>
             </div>
         </div>
-
+    
 
 
 

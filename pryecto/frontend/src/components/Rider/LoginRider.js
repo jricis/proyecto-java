@@ -47,7 +47,7 @@ const LoginRider = () => {
                                     if (resRider.status == 200) {
                                         if (resRider.data.length == 1) {
                                             setCookieRider(resRider.data[0].id)
-                                            window.location.href = "/rider/" + resRider.data[0].id
+                                            window.location.href = "/homerider/" + resRider.data[0].userrider
                                         } else {
                                             alert("No eres un rider ves al login de user")
                                         }

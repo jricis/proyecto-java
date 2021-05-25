@@ -175,7 +175,7 @@ const pagar=async ()=>{
             </tbody>
           </table>
           <div className="fs-4 fw-bold mt-3">
-            <p>Total a pagar: {getTotalPrice()}    </p>
+            <p>Total a pagar: {getTotalPrice()}€    </p>
         </div>
         </div>
         

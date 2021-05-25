@@ -97,6 +97,7 @@ class PedidoView(viewsets.ModelViewSet):
     queryset=Pedido.objects.all()
     serializer_class = PedidoSerializer
     filter_backends=[DjangoFilterBackend]
+    filterset_fields = ['user']
 class RiderView(viewsets.ModelViewSet):    
     queryset=Rider.objects.all()
     serializer_class = RiderSerializer

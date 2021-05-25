@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import ShowProducts from './showProducts';
+//import ShowProducts from './showProducts';
 const ShowPedido=(pedido)=>{
     return (
         
@@ -11,7 +11,7 @@ const ShowPedido=(pedido)=>{
                     <p>Nº pedido: {pedido.pedido.id}</p>
                 </div>
                 <div className="n-pedido d-flex justify-content-left col-12">
-                   <ShowProducts></ShowProducts>
+                   //<ShowProducts></ShowProducts>
                 </div>
                 <div className="d-flex justify-content-left col-12">
                     <p>Estado del pedido &nbsp;&nbsp;&nbsp;&nbsp;</p>

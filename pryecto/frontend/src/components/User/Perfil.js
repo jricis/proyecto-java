@@ -52,7 +52,7 @@ useEffect(()=>{
    
     return (
         <div className="container">
-           <div className="m-4 row">
+           <div className="m-4 row ">
                <h1 className="mb-4">¡Hola, {usuario.name}!</h1>
                 <AmountUser usuario= {usuario}></AmountUser>
                 <AmountPedidoUser></AmountPedidoUser>
